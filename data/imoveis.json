@@ -1,0 +1,324 @@
+[
+  {
+    "codigo": "AP183",
+    "tipo": "Apartamento",
+    "finalidade": "venda",
+    "bairro": "Jurerê Internacional",
+    "cidade": "Florianópolis",
+    "condominio": "Quay Luxury Home Design",
+    "titulo": "Apartamento mobiliado no Quay Luxury Home Design",
+    "preco": 7900000,
+    "condominio_valor": null,
+    "iptu": null,
+    "area": 194,
+    "area_tipo": "privativa",
+    "terreno": null,
+    "valor_m2": 40721,
+    "dormitorios": 3,
+    "suites": 3,
+    "banheiros": 4,
+    "vagas": 2,
+    "vivere_prive": false,
+    "descricao": [
+      "Conheça este sofisticado apartamento à venda no Quay Luxury Home Design, um dos empreendimentos mais exclusivos de Jurerê Internacional!",
+      "Com 194 m² de área privativa, o imóvel conta com 03 suítes finamente mobiliadas e decoradas, com móveis planejados e assinados de alto padrão. A cozinha, equipada com eletrodomésticos modernos, é integrada à sala de estar e jantar, criando um living amplo e elegante, com grandes esquadrias que garantem iluminação natural e valorizam cada ambiente. A suíte master dispõe de sacada com vista para o mar, tornando o espaço ainda mais especial. Além disso, o apartamento conta com 02 vagas de garagem.",
+      "O Quay Luxury Home Design oferece uma infraestrutura completa, com piscinas, spa, academia, brinquedoteca, áreas gourmet e serviço de praia exclusivo, garantindo sofisticação, lazer e conforto em um dos endereços mais desejados de Florianópolis."
+    ],
+    "diferenciais": [
+      "Mobiliado e decorado",
+      "Suíte master com vista para o mar",
+      "Piscinas",
+      "Spa",
+      "Academia",
+      "Brinquedoteca",
+      "Áreas gourmet",
+      "Serviço de praia"
+    ],
+    "fotos": [
+      {
+        "grande": "photos/ap183/01-1600.webp",
+        "pequena": "photos/ap183/01-720.webp"
+      },
+      {
+        "grande": "photos/ap183/02-1600.webp",
+        "pequena": "photos/ap183/02-720.webp"
+      },
+      {
+        "grande": "photos/ap183/03-1600.webp",
+        "pequena": "photos/ap183/03-720.webp"
+      },
+      {
+        "grande": "photos/ap183/04-1600.webp",
+        "pequena": "photos/ap183/04-720.webp"
+      },
+      {
+        "grande": "photos/ap183/05-1600.webp",
+        "pequena": "photos/ap183/05-720.webp"
+      },
+      {
+        "grande": "photos/ap183/06-1600.webp",
+        "pequena": "photos/ap183/06-720.webp"
+      },
+      {
+        "grande": "photos/ap183/07-1600.webp",
+        "pequena": "photos/ap183/07-720.webp"
+      },
+      {
+        "grande": "photos/ap183/08-1600.webp",
+        "pequena": "photos/ap183/08-720.webp"
+      },
+      {
+        "grande": "photos/ap183/09-1600.webp",
+        "pequena": "photos/ap183/09-720.webp"
+      },
+      {
+        "grande": "photos/ap183/10-1600.webp",
+        "pequena": "photos/ap183/10-720.webp"
+      }
+    ],
+    "foto_alt": "Living integrado do apartamento AP183 no Quay",
+    "url_site_atual": "https://viverenapraia.com.br/imovel/3754221/ap183-apartamento-a-venda-em-jurere-internacional",
+    "pasta_drive_id": "1eccjMs4ji9U-H_IvbDg-q1dfF2xDbHl-"
+  },
+  {
+    "codigo": "CA195",
+    "tipo": "Casa",
+    "finalidade": "venda",
+    "bairro": "Cacupé",
+    "cidade": "Florianópolis",
+    "condominio": "Vivá Residence",
+    "titulo": "Casa contemporânea com vista para o mar no Cacupé",
+    "preco": 14300000,
+    "condominio_valor": null,
+    "iptu": null,
+    "area": 1018,
+    "area_tipo": "construída",
+    "terreno": 760,
+    "valor_m2": 14047,
+    "dormitorios": 4,
+    "suites": 3,
+    "banheiros": 4,
+    "vagas": 2,
+    "vivere_prive": true,
+    "descricao": [
+      "Conheça esta casa contemporânea recém-construída, localizada no Condomínio Vivá Residence, em Cacupé, uma das regiões mais privilegiadas de Florianópolis. Com 1.018 m² de área construída em um terreno de 760 m², a residência foi projetada com um estilo cozy, combinando elegância, simplicidade e uma vista privilegiada para o mar.",
+      "A casa possui ambientes amplos, iluminados e integrados à natureza, além de 04 dormitórios, sendo 03 amplas suítes no andar superior, todas com closets e sacadas com vista para o mar. A suíte master, com 53 m², conta ainda com uma charmosa banheira de imersão voltada para um jardim, proporcionando um ambiente exclusivo e acolhedor.",
+      "No térreo, o imóvel dispõe de 01 dormitório adicional, ideal para hóspedes, além de um escritório reversível em dormitório, oferecendo versatilidade para diferentes necessidades. Uma residência que reúne amplitude, conforto, arquitetura contemporânea e uma localização privilegiada junto à natureza e ao mar."
+    ],
+    "diferenciais": [
+      "Vista para o mar",
+      "Suíte master de 53 m²",
+      "Banheira de imersão",
+      "Suítes com closet e sacada",
+      "Escritório",
+      "Piscina",
+      "Churrasqueira",
+      "Condomínio com portão eletrônico"
+    ],
+    "fotos": [
+      {
+        "grande": "photos/ca195/01-1600.webp",
+        "pequena": "photos/ca195/01-720.webp"
+      },
+      {
+        "grande": "photos/ca195/02-1600.webp",
+        "pequena": "photos/ca195/02-720.webp"
+      },
+      {
+        "grande": "photos/ca195/03-1600.webp",
+        "pequena": "photos/ca195/03-720.webp"
+      },
+      {
+        "grande": "photos/ca195/04-1600.webp",
+        "pequena": "photos/ca195/04-720.webp"
+      },
+      {
+        "grande": "photos/ca195/05-1600.webp",
+        "pequena": "photos/ca195/05-720.webp"
+      },
+      {
+        "grande": "photos/ca195/06-1600.webp",
+        "pequena": "photos/ca195/06-720.webp"
+      },
+      {
+        "grande": "photos/ca195/07-1600.webp",
+        "pequena": "photos/ca195/07-720.webp"
+      },
+      {
+        "grande": "photos/ca195/08-1600.webp",
+        "pequena": "photos/ca195/08-720.webp"
+      },
+      {
+        "grande": "photos/ca195/09-1600.webp",
+        "pequena": "photos/ca195/09-720.webp"
+      },
+      {
+        "grande": "photos/ca195/10-1600.webp",
+        "pequena": "photos/ca195/10-720.webp"
+      },
+      {
+        "grande": "photos/ca195/11-1600.webp",
+        "pequena": "photos/ca195/11-720.webp"
+      }
+    ],
+    "foto_alt": "Sala de jantar integrada ao jardim, casa CA195 no Cacupé",
+    "url_site_atual": "https://www.viverenapraia.com.br/imovel/4455296/ca195-casa-a-venda-com-vista-para-o-mar-no-cacupe",
+    "pasta_drive_id": "1lhZL_5wL9jr2OnOoq6bvtqv9tkDUUggQ"
+  },
+  {
+    "codigo": "AP365",
+    "tipo": "Apartamento",
+    "finalidade": "venda",
+    "bairro": "Jurerê Internacional",
+    "cidade": "Florianópolis",
+    "condominio": "Quay",
+    "titulo": "Apartamento de 3 suítes no Condomínio Quay",
+    "preco": 5300000,
+    "condominio_valor": 2400,
+    "iptu": 9000,
+    "area": 171,
+    "area_tipo": "privativa",
+    "terreno": null,
+    "valor_m2": 30994,
+    "dormitorios": 3,
+    "suites": 3,
+    "banheiros": 4,
+    "vagas": 2,
+    "vivere_prive": false,
+    "descricao": [
+      "Conheça este sofisticado apartamento no Condomínio Quay, localizado em uma das regiões mais exclusivas de Jurerê Internacional, ideal para quem busca amplitude, conforto e alto padrão.",
+      "Com 171 m² de área privativa, o imóvel conta com 03 suítes, oferecendo ambientes amplos, elegantes e muito bem distribuídos. As áreas de estar, jantar e cozinha são integradas, formando um living moderno e aconchegante, perfeito para receber familiares e amigos. Possui ainda 02 vagas de garagem.",
+      "O Condomínio Quay oferece uma infraestrutura completa de lazer e bem-estar, com piscina, academia e sauna, proporcionando conforto, exclusividade e qualidade de vida em um dos endereços mais valorizados de Florianópolis."
+    ],
+    "diferenciais": [
+      "Living integrado",
+      "Sacada",
+      "Ar-condicionado",
+      "Churrasqueira",
+      "Área de serviço",
+      "Despensa",
+      "Piscina",
+      "Academia",
+      "Sauna"
+    ],
+    "fotos": [
+      {
+        "grande": "photos/ap365/01-1600.webp",
+        "pequena": "photos/ap365/01-720.webp"
+      },
+      {
+        "grande": "photos/ap365/02-1600.webp",
+        "pequena": "photos/ap365/02-720.webp"
+      },
+      {
+        "grande": "photos/ap365/03-1600.webp",
+        "pequena": "photos/ap365/03-720.webp"
+      },
+      {
+        "grande": "photos/ap365/04-1600.webp",
+        "pequena": "photos/ap365/04-720.webp"
+      },
+      {
+        "grande": "photos/ap365/05-1600.webp",
+        "pequena": "photos/ap365/05-720.webp"
+      },
+      {
+        "grande": "photos/ap365/06-1600.webp",
+        "pequena": "photos/ap365/06-720.webp"
+      },
+      {
+        "grande": "photos/ap365/07-1600.webp",
+        "pequena": "photos/ap365/07-720.webp"
+      },
+      {
+        "grande": "photos/ap365/08-1600.webp",
+        "pequena": "photos/ap365/08-720.webp"
+      }
+    ],
+    "foto_alt": "Sacada do apartamento AP365 no Quay, com vista para o verde",
+    "url_site_atual": "https://www.viverenapraia.com.br/imovel/4444291/ap365-apartamento-a-venda-em-jurere-internacional",
+    "pasta_drive_id": "1kL_8pk2cVrn-tWN5eCXcpwb4Zou4l1aK"
+  },
+  {
+    "codigo": "CA217",
+    "tipo": "Casa",
+    "finalidade": "venda",
+    "bairro": "Novo Campeche",
+    "cidade": "Florianópolis",
+    "condominio": null,
+    "titulo": "Casa mobiliada a poucos passos da praia no Novo Campeche",
+    "preco": 4500000,
+    "condominio_valor": null,
+    "iptu": 2000,
+    "area": 265,
+    "area_tipo": "construída",
+    "terreno": 450,
+    "valor_m2": 16981,
+    "dormitorios": 4,
+    "suites": 2,
+    "banheiros": 4,
+    "vagas": 4,
+    "vivere_prive": false,
+    "descricao": [
+      "Com 265 m² de área construída em um terreno de 450 m², esta residência mobiliada e pronta para morar combina arquitetura, conforto e sofisticação em uma das regiões mais desejadas do Sul da Ilha. Os ambientes amplos, a iluminação natural e a escolha de materiais nobres valorizam cada detalhe do projeto.",
+      "No pavimento térreo, a área social integra as salas de estar e jantar à cozinha planejada, criando um ambiente acolhedor para o dia a dia e para receber convidados. A casa conta ainda com sala de TV, que pode ser convertida em dormitório, lavabo, lavanderia e garagem coberta com churrasqueira. O pátio ensolarado complementa a área externa, proporcionando privacidade e conexão com os ambientes internos. No pavimento superior, são 2 suítes, incluindo uma suíte master com closet e banheira de hidromassagem, além de um escritório amplo e um quarto adicional atualmente utilizado como closet. A planta permite adaptar os espaços para acomodar até 4 dormitórios, conforme a necessidade.",
+      "Os acabamentos reforçam a personalidade da residência, com aberturas e escada em madeira maciça, porcelanato no térreo e madeira nobre no pavimento superior. Localizada no loteamento Novo Campeche, a poucos minutos de caminhada da praia, cafés, academias, mercados e serviços, esta casa oferece a praticidade de uma rotina próxima ao mar, com a possibilidade de fazer diversas atividades a pé."
+    ],
+    "diferenciais": [
+      "Mobiliada",
+      "Posição solar norte",
+      "Suíte master com hidromassagem",
+      "Escritório",
+      "Móveis planejados",
+      "Ar-condicionado",
+      "Churrasqueira",
+      "Hobby box",
+      "Dependência de empregada"
+    ],
+    "fotos": [
+      {
+        "grande": "photos/ca217/01-1600.webp",
+        "pequena": "photos/ca217/01-720.webp"
+      },
+      {
+        "grande": "photos/ca217/02-1600.webp",
+        "pequena": "photos/ca217/02-720.webp"
+      },
+      {
+        "grande": "photos/ca217/03-1600.webp",
+        "pequena": "photos/ca217/03-720.webp"
+      },
+      {
+        "grande": "photos/ca217/04-1600.webp",
+        "pequena": "photos/ca217/04-720.webp"
+      },
+      {
+        "grande": "photos/ca217/05-1600.webp",
+        "pequena": "photos/ca217/05-720.webp"
+      },
+      {
+        "grande": "photos/ca217/06-1600.webp",
+        "pequena": "photos/ca217/06-720.webp"
+      },
+      {
+        "grande": "photos/ca217/07-1600.webp",
+        "pequena": "photos/ca217/07-720.webp"
+      },
+      {
+        "grande": "photos/ca217/08-1600.webp",
+        "pequena": "photos/ca217/08-720.webp"
+      },
+      {
+        "grande": "photos/ca217/09-1600.webp",
+        "pequena": "photos/ca217/09-720.webp"
+      },
+      {
+        "grande": "photos/ca217/10-1600.webp",
+        "pequena": "photos/ca217/10-720.webp"
+      }
+    ],
+    "foto_alt": "Fachada da casa CA217 no Novo Campeche",
+    "url_site_atual": "https://www.viverenapraia.com.br/imovel/4496657/ca217-casa-a-venda-no-novo-campeche",
+    "pasta_drive_id": "1cfyCd4s4Vsv3fH4AW_dH6fs5rgHpYx1w"
+  }
+]

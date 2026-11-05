@@ -1,0 +1,71 @@
+{
+  "whatsapp": {
+    "numero": "5548991979159",
+    "status": "PROVISÓRIO — confirmar com o Nícollas"
+  },
+  "creci": "CRECI/SC 8883-J",
+  "instagram": "@imoveis.vivere",
+  "unidades": [
+    {
+      "nome": "Jurerê Internacional",
+      "endereco": "Rua dos Chernes, 90 · Loja 01",
+      "tipo": "matriz"
+    },
+    {
+      "nome": "Porto da Lagoa",
+      "endereco": "R. Ernesto Meyer Filho, 37 · Loja 3C, Lagoa da Conceição"
+    },
+    {
+      "nome": "Santo Antônio de Lisboa",
+      "endereco": "Caminho dos Açores, 1770"
+    }
+  ],
+  "google": {
+    "place_id": "ChIJj0flj7xFJ5UR6HMBkbAC2Vs",
+    "ficha": "Vivere Jurerê Internacional",
+    "nota": 5.0,
+    "total_avaliacoes": 76,
+    "consultado_em": "2026-11-05",
+    "integracao": "Google Business Profile API (todas as avaliações, a ficha é da Vivere)"
+  },
+  "bairros_guia": [
+    {
+      "nome": "Jurerê Internacional",
+      "texto": "Bairro planejado à beira-mar, no norte da ilha, entre praia, beach clubs e ruas arborizadas."
+    },
+    {
+      "nome": "Jurerê",
+      "texto": "Praia de águas calmas, vizinha de Jurerê Internacional, com clima residencial."
+    },
+    {
+      "nome": "Novo Campeche",
+      "texto": "Sul da ilha, com rotina a pé até a praia, cafés, academias e serviços."
+    },
+    {
+      "nome": "Santo Antônio de Lisboa",
+      "texto": "Casario açoriano e pôr do sol sobre a baía norte."
+    },
+    {
+      "nome": "Cacupé",
+      "texto": "Residencial tranquilo junto à natureza, com vista para a baía norte."
+    }
+  ],
+  "lancamentos": [
+    {
+      "nome": "Quay Luxury Home Design",
+      "bairro": "Jurerê Internacional"
+    },
+    {
+      "nome": "Vista Artefacto",
+      "bairro": "Santo Antônio de Lisboa",
+      "status": "aguardando imagens"
+    }
+  ],
+  "avaliacoes_exemplo": [
+    "Comprei um apto com a imobiliária Vivere. Atendimento impecável. Negociação perfeita em todos os detalhes. Recomendo muito",
+    "Atendimento de alto padrão, condizente com os imóveis vendidos. Cláudio me ajudou a comprar um apartamento, mostrando diversas opções e apresentando o empreendimento com domínio e clareza, o que me deu segurança para concluir a compra.",
+    "Gostaria de agradecer ao Deivis, da Vivere Imóveis, por todo o atendimento, atenção e dedicação durante a compra do nosso imóvel. Sua disponibilidade e profissionalismo tornaram todo o processo muito mais tranquilo e seguro. Recomendo de olhos fechados!",
+    "Gostaria de expressar minha sincera gratidão pelo excelente trabalho realizado na busca do meu apartamento. Sua dedicação, atenção aos detalhes, paciência e profissionalismo fizeram toda a diferença durante esse processo tão importante."
+  ],
+  "avaliacoes_obs": "Textos reais da ficha do Google (sem nome do autor). No site final, vir da API, com autor e data."
+}

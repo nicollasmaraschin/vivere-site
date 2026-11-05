@@ -1,0 +1,46 @@
+/* Vivere — tokens de design (extraídos do protótipo aprovado, nov/2026) */
+:root {
+  /* Cores da marca (paleta oficial) */
+  --vivere-navy: #1C2739;      /* Prussian Blue — cor principal */
+  --vivere-navy-2: #243149;    /* hover do navy */
+  --vivere-tape: #A4846B;      /* Dusty Tape — destaque (só decorativo / texto grande) */
+  --vivere-tape-ink: #7A5E46;  /* Dusty Tape escurecido — texto pequeno sobre fundo claro (contraste AA) */
+  --vivere-grey: #D7CFC4;      /* Dusty Grey — fundos de seção, texto sobre navy */
+  --vivere-porcelain: #F3F4EF; /* Porcelain — fundo geral */
+
+  /* Apoio */
+  --vivere-paper: #FAFAF7;     /* cards e áreas claras */
+  --vivere-night: #0E131C;     /* fundo escuro da página do imóvel e do topo */
+  --vivere-muted: #59606C;     /* texto secundário sobre fundo claro */
+  --vivere-line: #DCD6CC;      /* bordas e divisórias */
+  --vivere-tab-ink: #46557A;   /* texto das abas inativas */
+
+  /* Tipografia */
+  --font-display: "Montserrat", "Helvetica Neue", Arial, sans-serif; /* títulos, preços, botões, abas, busca, cards, rodapé */
+  --font-text: "Aileron", "Helvetica Neue", Arial, sans-serif;       /* textos longos (descrições, parágrafos) */
+
+  /* Escala de títulos — celular / computador (≥1000px) */
+  --h1: 34px;  --h1-lg: 54px;   /* Montserrat 800, letter-spacing -0.02em */
+  --h2: 28px;  --h2-lg: 40px;   /* Montserrat 800 */
+  --h3: 20px;  --h3-lg: 24px;   /* Montserrat 700 */
+  --hero-h1: 32px; --hero-h1-lg: 56px;
+  --body: 16px; /* line-height 1.6; descrições 1.75 */
+
+  /* Forma */
+  --radius-card: 14px;
+  --radius-panel: 20px;
+  --radius-hero-sheet: 40px; --radius-hero-sheet-lg: 56px;
+  --radius-pill: 999px;
+  --tap-min: 44px;
+
+  /* Layout */
+  --container: 1320px;
+  --gutter: 20px; --gutter-lg: 40px;
+  --section-y: 72px; --section-y-lg: 112px;
+  --bp-tablet: 700px; --bp-desktop: 1000px;
+
+  /* Movimento */
+  --ease: cubic-bezier(.22,.61,.36,1);        /* padrão */
+  --ease-slide: cubic-bezier(.65,0,.25,1);    /* indicador das abas */
+  --ease-reveal: cubic-bezier(.7,0,.2,1);     /* abertura circular do menu */
+}

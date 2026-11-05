@@ -1,0 +1,1463 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vivere — Imóveis selecionados</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap">
+<style>
+@font-face{font-family:"Novelin";font-weight:300;font-style:normal;font-display:swap;src:url("/_blob/76df0dcaf964307cf696fca9e00234e1") format("woff2")}
+@font-face{font-family:"Novelin";font-weight:400;font-style:normal;font-display:swap;src:url("/_blob/f2f00c5aae262b1f9e9c2bdde6432780") format("woff2")}
+@font-face{font-family:"Novelin";font-weight:300;font-style:italic;font-display:swap;src:url("/_blob/0ed7564d10bdd584eecb2d60c810ffba") format("woff2")}
+@font-face{font-family:"Novelin";font-weight:700;font-style:normal;font-display:swap;src:url("/_blob/47b1d707e38319c867e84a4446eb018c") format("woff2")}
+@font-face{font-family:"Aileron";font-weight:300;font-style:normal;font-display:swap;src:url("/_blob/c7fe4386296f9317e81ac65096adcaff") format("woff2")}
+@font-face{font-family:"Aileron";font-weight:400;font-style:normal;font-display:swap;src:url("/_blob/bbde7d12dfaad7dd665f55a184447c26") format("woff2")}
+@font-face{font-family:"Aileron";font-weight:600;font-style:normal;font-display:swap;src:url("/_blob/2d612851ed1852e6ee41d790adc5d3a0") format("woff2")}
+
+:root{--navy:#1C2739;--navy-2:#243149;--tape:#A4846B;--tape-ink:#7A5E46;--grey:#D7CFC4;--porc:#F3F4EF;--paper:#FAFAF7;--night:#0E131C;--muted:#59606C;--line:#DCD6CC;--display:"Montserrat","Helvetica Neue",Arial,sans-serif;--sans:"Aileron","Helvetica Neue",Arial,sans-serif;--r:14px;--ease:cubic-bezier(.22,.61,.36,1)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--porc);color:var(--navy);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--navy)}a:hover{color:var(--tape-ink)}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--tape);outline-offset:3px;border-radius:6px}
+.site{min-height:100vh;overflow-x:clip}
+.wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 20px}
+.eyebrow{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin:0 0 14px}
+.h1,.h2,.h3{font-family:var(--display);font-weight:800;letter-spacing:-.02em;margin:0}
+.h1{font-size:34px;line-height:1.12}
+.h2{font-size:28px;line-height:1.15}
+.h3{font-size:20px;line-height:1.25;font-weight:700;letter-spacing:-.01em}
+.h1 em,.h2 em{font-style:normal;font-weight:inherit}
+.lead{font-size:17px;line-height:1.65;color:var(--muted);margin:14px 0 0;max-width:620px}
+.sec{padding:72px 0}
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 24px;margin-bottom:32px}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid transparent;font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:0;text-decoration:none;cursor:pointer;transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-navy{background:var(--navy);color:var(--porc)}.btn-navy:hover{background:var(--navy-2);color:var(--porc)}
+.btn-light{background:var(--porc);color:var(--navy)}.btn-light:hover{background:#fff;color:var(--navy)}
+.btn-line{background:transparent;color:var(--navy);border-color:var(--navy)}.btn-line:hover{background:var(--navy);color:var(--porc)}
+.btn-line-light{background:transparent;color:var(--porc);border-color:rgba(243,244,239,.55)}.btn-line-light:hover{background:var(--porc);color:var(--navy)}
+.link-arrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:0;text-decoration:none;background:none;border:0;padding:8px 0;cursor:pointer;color:inherit;min-height:44px}
+.link-arrow svg{width:16px;height:16px;transition:transform .25s var(--ease)}
+.link-arrow:hover svg{transform:translateX(4px)}
+
+/* cabeçalho flutuante */
+.hdr{position:fixed;z-index:40;top:12px;left:12px;right:12px;display:flex;justify-content:center;pointer-events:none}
+.hdr-bar{pointer-events:auto;width:100%;max-width:1320px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 8px 0 20px;border-radius:999px;background:rgba(28,39,57,.86);color:var(--porc);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 8px 30px rgba(14,19,28,.18)}
+.hdr--light .hdr-bar{background:rgba(243,244,239,.94);color:var(--navy)}
+.hdr-bar{transition:background .35s var(--ease),box-shadow .35s var(--ease)}
+.hdr--clear .hdr-bar{background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.logo{display:inline-flex;align-items:center;gap:12px;background:none;border:0;padding:8px 0;cursor:pointer;color:inherit;min-height:44px}
+.logo .sym{width:26px;height:18px}
+.logo .wm{width:118px;height:16px}
+.nav{display:none;gap:4px}
+.nav button{background:none;border:0;padding:10px 14px;border-radius:999px;cursor:pointer;font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:0;color:inherit;min-height:44px}
+.nav button:hover{background:rgba(243,244,239,.12)}
+.hdr--light .nav button:hover{background:rgba(28,39,57,.08)}
+.hdr-actions{display:flex;align-items:center;gap:6px}
+.icon-btn{width:44px;height:44px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(243,244,239,.28);color:inherit;cursor:pointer}
+.hdr--light .icon-btn{border-color:rgba(28,39,57,.2)}
+.icon-btn svg{width:18px;height:18px}
+.hdr-cta{display:none}
+
+/* menu */
+.menu-pill{height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:0 12px;border-radius:999px;border:1px solid rgba(243,244,239,.32);background:transparent;color:inherit;cursor:pointer;font-family:var(--display);font-weight:700;font-size:14px;transition:background .25s var(--ease)}
+.menu-pill:hover{background:rgba(243,244,239,.12)}
+.hdr--light .menu-pill{border-color:rgba(28,39,57,.22)}
+.hdr--light .menu-pill:hover{background:rgba(28,39,57,.06)}
+.menu-pill svg{width:18px;height:18px}
+.menu-pill-label{display:none}
+.menu{position:fixed;z-index:60;inset:0}
+.menu::before{content:"";position:absolute;inset:0;background:rgba(14,19,28,.55);animation:mFadeIn .55s var(--ease) both}
+.menu-panel{--ox:0px;position:absolute;inset:0;background:var(--porc);color:var(--navy);overflow:auto;display:grid;grid-template-columns:minmax(0,1fr);animation:mReveal .8s cubic-bezier(.7,0,.2,1) both}
+.menu-art{display:none}
+.menu-side{display:flex;flex-direction:column;min-height:100%;padding:14px 20px 28px}
+.menu-top{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:60px}
+.menu-top .wm{width:118px;height:16px;color:var(--navy);flex:none}
+.menu-top-actions{display:flex;gap:8px;align-items:center}
+.menu-top-actions .btn{min-height:44px;padding:0 14px}
+.menu-top-actions .btn span{display:none}
+.menu-close{width:44px;height:44px;flex:none;border-radius:999px;border:1px solid rgba(28,39,57,.22);background:transparent;color:var(--navy);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .35s var(--ease)}
+.menu-close:hover{transform:rotate(90deg)}
+.menu-close svg{width:18px;height:18px}
+.menu-body{display:grid;gap:36px;margin-top:28px}
+.menu-main{display:flex;flex-direction:column;align-items:flex-start}
+.menu-main button{background:none;border:0;padding:4px 0;cursor:pointer;color:var(--navy);font-family:var(--display);font-weight:800;font-size:32px;line-height:1.22;letter-spacing:-.02em;text-align:left;animation:mLinkIn .65s var(--ease) both;transition:color .25s var(--ease),translate .35s var(--ease)}
+.menu-main button:hover{color:var(--tape-ink);translate:8px 0}
+.menu-main button:nth-child(1){animation-delay:.32s}
+.menu-main button:nth-child(2){animation-delay:.37s}
+.menu-main button:nth-child(3){animation-delay:.42s}
+.menu-main button:nth-child(4){animation-delay:.47s}
+.menu-main button:nth-child(5){animation-delay:.52s}
+.menu-main button:nth-child(6){animation-delay:.57s}
+.menu-cols{display:grid;gap:28px 24px;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;animation:mFadeUp .7s var(--ease) .5s both}
+.menu-col h6{margin:0 0 12px;font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.menu-col button,.menu-col a{display:block;background:none;border:0;padding:6px 0;cursor:pointer;color:var(--navy);font-family:var(--display);font-weight:700;font-size:14px;text-align:left;text-decoration:none}
+.menu-col button:hover,.menu-col a:hover{color:var(--tape-ink)}
+.menu-units{grid-column:1 / -1;display:grid;gap:12px}
+.menu-units h6{margin-bottom:0}
+.menu-units p{margin:0;font-size:13px;line-height:1.5;color:var(--muted)}
+.menu-units p b{display:block;color:var(--navy);font-family:var(--display);font-weight:700}
+.menu-foot{margin-top:auto;padding-top:32px;display:flex;flex-wrap:wrap;gap:10px;animation:mFadeUp .7s var(--ease) .6s both}
+.menu-foot .btn{flex:1 1 200px;min-height:54px}
+.menu.is-closing::before{animation:mFadeOut .5s var(--ease) forwards}
+.menu.is-closing .menu-panel{animation:mUnreveal .5s cubic-bezier(.7,0,.2,1) forwards}
+@keyframes mReveal{from{clip-path:circle(22px at calc(var(--mx) - var(--ox)) calc(var(--my) - var(--ox)))}to{clip-path:circle(150vmax at calc(var(--mx) - var(--ox)) calc(var(--my) - var(--ox)))}}
+@keyframes mUnreveal{from{clip-path:circle(150vmax at calc(var(--mx) - var(--ox)) calc(var(--my) - var(--ox)))}to{clip-path:circle(22px at calc(var(--mx) - var(--ox)) calc(var(--my) - var(--ox)))}}
+@keyframes mFadeIn{from{opacity:0}to{opacity:1}}
+@keyframes mFadeOut{from{opacity:1}to{opacity:0}}
+@keyframes mPanelIn{from{opacity:0;transform:translateY(-18px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes mPanelOut{from{opacity:1;transform:none}to{opacity:0;transform:translateY(-12px) scale(.985)}}
+@keyframes mLinkIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes mFadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes mArtIn{from{opacity:0;transform:scale(1.12)}to{opacity:1;transform:scale(1)}}
+@keyframes mVIn{from{opacity:0;transform:translate(-50%,-42%) scale(.9)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@media (prefers-reduced-motion:reduce){.menu,.menu *{animation:none!important}}
+
+/* hero */
+.hero{position:relative;height:720px;background:var(--night);color:var(--porc)}
+.hero-bg{position:absolute;inset:0;overflow:hidden}
+.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-shade{position:absolute;inset:0;background:rgba(14,19,28,.44)}
+.hero-shade::after{content:"";position:absolute;left:0;right:0;bottom:0;height:45%;background:linear-gradient(180deg,rgba(14,19,28,0),rgba(14,19,28,.6))}
+.hero-in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:96px 20px 80px;max-width:1100px;margin:0 auto}
+.hero .h1{font-size:32px;max-width:760px}
+.hero-sub{margin:18px 0 0;font-size:16px;font-weight:600;letter-spacing:.01em;color:rgba(243,244,239,.94)}
+.hero-tabs{position:relative;display:inline-grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:32px;padding:4px;border-radius:999px;background:rgba(243,244,239,.92)}
+.hero-ind{position:absolute;z-index:0;top:4px;bottom:4px;left:4px;width:calc((100% - 8px) / 3);border-radius:999px;background:#fff;box-shadow:0 2px 8px rgba(14,19,28,.16);transition:transform .5s cubic-bezier(.65,0,.25,1)}
+.hero-ind.pos-1{transform:translateX(100%)}
+.hero-ind.pos-2{transform:translateX(200%)}
+@media (prefers-reduced-motion:reduce){.hero-ind{transition:none}}
+.hero-tab{position:relative;z-index:1;min-height:44px;padding:0 12px;border-radius:999px;border:0;background:transparent;cursor:pointer;font-family:var(--display);font-weight:700;font-size:14px;color:#46557A;transition:color .4s var(--ease)}
+.hero-tab:hover{color:var(--navy)}
+.hero-tab.is-on{color:var(--navy)}
+.hero-find{position:relative;margin-top:16px;width:100%;max-width:680px}
+.hero-search{width:100%;display:flex;align-items:center;gap:10px;min-height:62px;padding:0 8px 0 22px;border-radius:999px;background:#fff;color:var(--navy);box-shadow:0 18px 40px rgba(14,19,28,.22);cursor:text}
+.hero-search{transition:box-shadow .45s var(--ease),transform .45s var(--ease)}
+.hero-search:focus-within{box-shadow:0 26px 60px rgba(14,19,28,.34),0 0 0 4px rgba(243,244,239,.32);transform:translateY(-2px)}
+.hero-go{transition:transform .3s var(--ease),background .3s var(--ease)}
+.hero-go:hover{transform:translateX(2px);background:var(--navy-2)}
+.hero-go{position:relative;overflow:hidden}
+.hero-go svg{position:absolute;left:50%;top:50%;margin:-9px 0 0 -9px}
+.hero-go .a2{transform:translateX(-34px);opacity:0}
+.hero-go.is-going{background:var(--navy-2)}
+.hero-go .a1{transform-origin:85% 50%}
+.hero-go .ah{transform-box:view-box;transform-origin:20px 12px}
+.hero-go.is-going .a1{animation:goOut .62s linear forwards}
+.hero-go.is-going .ah{animation:goHead .62s linear forwards}
+@keyframes goOut{
+  0%{transform:translateX(0) scaleX(1);opacity:1;animation-timing-function:cubic-bezier(.3,0,.4,1)}
+  34%{transform:translateX(-6px) scaleX(.8);opacity:1;animation-timing-function:cubic-bezier(.4,0,.6,1)}
+  44%{transform:translateX(-5px) scaleX(.84);opacity:1;animation-timing-function:cubic-bezier(.7,0,.25,1)}
+  100%{transform:translateX(52px) scaleX(1.35);opacity:0}
+}
+@keyframes goHead{
+  0%{transform:scale(1,1);animation-timing-function:cubic-bezier(.3,0,.4,1)}
+  34%{transform:scale(.82,1.25);animation-timing-function:cubic-bezier(.4,0,.6,1)}
+  48%{transform:scale(1,1);animation-timing-function:cubic-bezier(.7,0,.25,1)}
+  100%{transform:scale(1.3,.5)}
+}
+@media (prefers-reduced-motion:reduce){.hero-go.is-going .ah{animation:none}}
+@keyframes goIn{from{transform:translateX(-34px);opacity:0}to{transform:none;opacity:1}}
+@keyframes pageIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.sr-top{animation:pageIn .7s var(--ease) both}
+.sr-top + section{animation:pageIn .7s var(--ease) .08s both}
+.sr-top + section .card{animation:pageIn .6s var(--ease) both}
+.sr-top + section .card:nth-child(1){animation-delay:.14s}
+.sr-top + section .card:nth-child(2){animation-delay:.22s}
+.sr-top + section .card:nth-child(3){animation-delay:.3s}
+.sr-top + section .card:nth-child(4){animation-delay:.38s}
+.pd-top .wrap{animation:pageIn .7s var(--ease) both}
+@media (prefers-reduced-motion:reduce){.hero-go.is-going .a1,.hero-go.is-going .a2,.sr-top,.sr-top + section,.sr-top + section .card,.pd-top .wrap{animation:none}}
+.hero-search .ico{width:18px;height:18px;flex:none;color:var(--muted)}
+.hero-search input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:inherit;font-family:var(--display);font-weight:500;font-size:16px;color:var(--navy)}
+.hero-search input::placeholder{color:#7a808b}
+.hero-go{width:46px;height:46px;flex:none;border-radius:999px;border:0;background:var(--navy);color:var(--porc);display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.hero-go svg{width:18px;height:18px}
+.sug{position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:5;background:#fff;color:var(--navy);border-radius:22px;box-shadow:0 24px 60px rgba(14,19,28,.3);padding:8px;text-align:left;max-height:340px;overflow:auto;animation:sugIn .45s cubic-bezier(.2,.9,.25,1) both;transform-origin:top center}
+.sug.is-leaving{animation:sugOut .22s var(--ease) forwards}
+.sug-item{animation:sugItem .45s var(--ease) both}
+.sug-item:nth-child(3){animation-delay:.04s}
+.sug-item:nth-child(4){animation-delay:.08s}
+.sug-item:nth-child(5){animation-delay:.12s}
+.sug-group:nth-child(2) .sug-item{animation-delay:.08s}
+.sug-group:nth-child(3) .sug-item{animation-delay:.14s}
+@keyframes sugItem{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes sugOut{from{opacity:1;transform:none}to{opacity:0;transform:translateY(-6px) scale(.985)}}
+.sug-group + .sug-group{border-top:1px solid #ECE8E1;margin-top:6px;padding-top:6px}
+.sug-title{padding:8px 12px 4px;font-family:var(--display);font-weight:700;font-size:12px;color:var(--muted)}
+.sug-item{display:flex;align-items:center;gap:12px;width:100%;min-height:54px;padding:8px 12px;border:0;border-radius:14px;background:transparent;cursor:pointer;text-align:left;color:var(--navy);transition:background .2s var(--ease)}
+.sug-item:hover,.sug-item.is-on{background:#F3F4EF}
+.sug-ico{width:38px;height:38px;flex:none;border-radius:12px;background:#F3F4EF;display:flex;align-items:center;justify-content:center;color:var(--navy);transition:background .2s var(--ease)}
+.sug-item:hover .sug-ico,.sug-item.is-on .sug-ico{background:#fff}
+.sug-ico svg{width:18px;height:18px}
+.sug-txt{display:flex;flex-direction:column;min-width:0}
+.sug-txt b{font-family:var(--display);font-weight:700;font-size:15px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sug-txt span{font-size:13px;color:var(--muted)}
+.sug-empty{padding:16px 14px;font-size:14px;line-height:1.5;color:var(--muted)}
+@keyframes sugIn{from{opacity:0;transform:translateY(-12px) scale(.97)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.sug,.sug-item{animation:none}.hero-search{transition:none}}
+.sheet{position:relative;z-index:1;margin-top:-40px;border-radius:40px 40px 0 0;background:var(--porc)}
+.hero-bg img{animation:heroImg 2s var(--ease) both}
+.hero-in > *{animation:heroUp .9s var(--ease) both}
+.hero-in > *:nth-child(1){animation-delay:.2s}
+.hero-in > *:nth-child(2){animation-delay:.38s}
+.hero-in > *:nth-child(3){animation-delay:.52s}
+.hero-in > *:nth-child(4){animation-delay:.62s}
+@keyframes heroImg{from{transform:scale(1.07)}to{transform:scale(1)}}
+@keyframes heroUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hero-bg img,.hero-in > *{animation:none}}
+.search{margin-top:28px;background:rgba(243,244,239,.97);color:var(--navy);border-radius:22px;padding:8px;max-width:760px;box-shadow:0 20px 50px rgba(14,19,28,.25)}
+.tabs{display:flex;gap:4px;padding:2px}
+.tab{flex:1;min-height:44px;border-radius:999px;border:0;background:transparent;cursor:pointer;font-family:var(--display);font-weight:700;font-size:15px;color:#46557A}
+.tab.is-on{background:var(--navy);color:var(--porc)}
+.search-row{display:flex;gap:8px;margin-top:6px}
+.field{flex:1;display:flex;align-items:center;gap:10px;min-height:52px;padding:0 16px;border-radius:16px;background:#fff;border:1px solid var(--line)}
+.field svg{width:18px;height:18px;flex:none;color:var(--muted)}
+.field input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:inherit;font-family:var(--display);font-weight:500;font-size:16px;color:var(--navy)}
+.field input::placeholder{color:#7a808b}
+.search .btn{min-height:52px;border-radius:16px;padding:0 20px}
+.search .btn span{display:none}
+
+/* faixa institucional */
+.intro{display:grid;gap:28px}
+.intro .h2 b{font-weight:400}
+.units{display:grid;gap:12px}
+.unit{padding:18px 0;border-top:1px solid var(--line)}
+.unit h4{margin:0 0 4px;font-family:var(--display);font-weight:700;font-size:16px}
+.unit p{margin:0;font-size:14px;color:var(--muted)}
+
+/* cards */
+.grid{display:grid;gap:36px 24px}
+.card{display:block;text-decoration:none;color:var(--navy);cursor:pointer;background:none;border:0;padding:0;text-align:left;width:100%}
+.card-media{position:relative;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;background:var(--grey)}
+.card-media img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.card:hover .card-media img{transform:scale(1.04)}
+.badge-prive{position:absolute;left:0;top:0;padding:10px 18px 10px 16px;background:var(--navy);color:var(--porc);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;border-bottom-right-radius:20px}
+.card-body{padding-top:16px}
+.card-price{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.01em}
+.card-title{margin-top:4px;font-size:15px}
+.card-meta{margin-top:8px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.card-code{color:var(--tape-ink)}
+
+/* privé */
+.prive{background:var(--night);color:var(--porc)}
+.prive-in{display:grid;gap:0;border-radius:24px;overflow:hidden;background:var(--navy)}
+.prive-media{position:relative;min-height:340px}
+.prive-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.prive-body{position:relative;padding:36px 24px 40px;overflow:hidden}
+.prive-body .seal{width:84px;height:84px;margin-bottom:22px}
+.prive-body .eyebrow{color:var(--grey)}
+.prive-price{font-family:var(--display);font-weight:700;font-size:26px;margin:18px 0 6px}
+.prive-meta{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.prive-note{margin:20px 0 28px;color:var(--grey);font-size:15px;max-width:420px}
+.vlines{position:absolute;pointer-events:none;color:rgba(215,207,196,.14)}
+.prive-body .vlines{right:-60px;bottom:-40px;width:360px}
+
+/* lançamentos */
+.dark{background:var(--navy);color:var(--porc);position:relative;overflow:hidden}
+.dark .lead{color:var(--grey)}
+.dark .eyebrow{color:var(--grey)}
+.dark > .vlines{left:-120px;top:-60px;width:720px}
+.launch-grid{display:grid;gap:20px;position:relative}
+.launch{position:relative;border-radius:var(--r);overflow:hidden;min-height:380px;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;background:var(--navy-2);color:var(--porc);text-decoration:none;cursor:pointer;border:0;text-align:left;width:100%}
+.launch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.launch .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,19,28,0) 40%,rgba(14,19,28,.78) 100%)}
+.launch-body{position:relative}
+.launch-body .eyebrow{margin-bottom:8px}
+.launch-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--grey);font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px dashed rgba(215,207,196,.35);border-radius:var(--r)}
+
+/* bairros */
+.bairros{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.bairro{position:relative;border-radius:var(--r);overflow:hidden;min-height:210px;display:flex;flex-direction:column;justify-content:flex-end;padding:16px;color:var(--porc);background:var(--navy);text-align:left;border:0;cursor:pointer}
+.bairro:first-child{grid-column:1 / -1;min-height:300px}
+.bairro img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.bairro:hover img{transform:scale(1.04)}
+.bairro .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,19,28,0) 30%,rgba(14,19,28,.75) 100%)}
+.bairro.is-tape{background:var(--tape)}
+.bairro .vlines{right:-30px;top:-10px;width:220px;color:rgba(243,244,239,.18)}
+.bairro-body{position:relative}
+.bairro h3{margin:0;font-family:var(--display);font-weight:700;font-size:19px;line-height:1.2}
+.bairro p{margin:6px 0 0;font-size:13px;line-height:1.45;color:rgba(243,244,239,.86)}
+
+/* vídeos */
+.videos{display:grid;grid-auto-flow:column;grid-auto-columns:72%;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none}
+.videos::-webkit-scrollbar{display:none}
+.video{position:relative;aspect-ratio:9/16;border-radius:var(--r);overflow:hidden;scroll-snap-align:start;background:var(--night);color:var(--porc);border:0;padding:0;cursor:pointer;text-align:left}
+.video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.video .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,19,28,0) 50%,rgba(14,19,28,.8) 100%)}
+.video-play{position:absolute;left:16px;top:16px;width:44px;height:44px;border-radius:999px;background:rgba(243,244,239,.92);color:var(--navy);display:flex;align-items:center;justify-content:center}
+.video-play svg{width:16px;height:16px;margin-left:2px}
+.video-cap{position:absolute;left:16px;right:16px;bottom:16px}
+.video-cap b{display:block;font-family:var(--display);font-weight:700;font-size:16px;line-height:1.25}
+.video-cap span{font-size:12px;color:var(--grey)}
+
+/* avaliações */
+.rating{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.rating-num{font-family:var(--display);font-weight:800;font-size:64px;line-height:1;letter-spacing:-.03em}
+.stars{display:flex;gap:3px;color:var(--tape)}
+.stars svg{width:18px;height:18px}
+.rating-src{font-size:13px;color:var(--muted);margin-top:6px}
+.quotes{display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:32px;padding-bottom:6px;scrollbar-width:none}
+.quotes::-webkit-scrollbar{display:none}
+.quote{scroll-snap-align:start;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;display:flex;flex-direction:column;gap:18px}
+.quote p{margin:0;font-family:var(--display);font-weight:500;font-size:16px;line-height:1.55}
+.quote footer{margin-top:auto;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px}
+.g-mark{width:16px;height:16px;flex:none}
+
+/* captação */
+.owner{background:var(--grey)}
+.owner-in{display:grid;gap:24px;align-items:center}
+.owner .h2{max-width:640px}
+
+/* rodapé */
+.ftr{background:var(--navy);color:var(--porc);padding:64px 0 120px;position:relative;overflow:hidden}
+.ftr .vlines{right:-160px;top:-80px;width:620px}
+.ftr-top{display:grid;gap:40px;position:relative}
+.ftr .wm-tag{width:220px;color:var(--porc)}
+.ftr h5{margin:0 0 12px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--grey)}
+.ftr p,.ftr li{margin:0;font-size:14px;color:rgba(243,244,239,.86);line-height:1.7}
+.ftr ul{list-style:none;padding:0;margin:0}
+.ftr a{color:var(--porc)}
+.ftr li a{font-family:var(--display);font-weight:600;text-decoration:none}
+.ftr li a:hover{text-decoration:underline;color:var(--porc)}
+.ftr-cols{display:grid;gap:32px;grid-template-columns:repeat(1,minmax(0,1fr))}
+.ftr-bottom{position:relative;margin-top:48px;padding-top:20px;border-top:1px solid rgba(243,244,239,.14);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:12px;color:var(--grey)}
+
+/* ===== página do imóvel ===== */
+.pd-top{background:var(--night);color:var(--porc);padding:96px 0 40px}
+.crumbs{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-family:var(--display);font-weight:600;font-size:12px;color:var(--grey);margin-bottom:18px}
+.crumbs button{background:none;border:0;padding:6px 0;color:var(--grey);cursor:pointer;font-family:var(--display);font-weight:600;font-size:12px;min-height:32px}
+.crumbs button:hover{color:var(--porc)}
+.gal{display:grid;gap:8px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.gal-main{grid-column:1 / -1;position:relative;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;border:0;padding:0;cursor:zoom-in;background:var(--navy)}
+.gal-main img,.gal-th img{width:100%;height:100%;object-fit:cover}
+.gal-th{position:relative;aspect-ratio:1/1;border-radius:10px;overflow:hidden;border:0;padding:0;cursor:zoom-in;background:var(--navy)}
+.gal-more{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(14,19,28,.6);color:var(--porc);font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:0}
+.gal-all{display:none}
+.pd-head{margin-top:28px;display:grid;gap:18px}
+.pd-head .eyebrow{color:var(--grey);margin-bottom:10px}
+.pd-head .h1{font-size:30px}
+.pd-code{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.pd-price{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.01em}
+.specs{display:flex;flex-wrap:wrap;gap:10px 22px;padding-top:18px;border-top:1px solid rgba(243,244,239,.14)}
+.spec{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--porc)}
+.spec svg{width:18px;height:18px;color:var(--grey)}
+.badge-prive-inline{display:inline-flex;align-self:flex-start;padding:8px 16px;background:var(--porc);color:var(--navy);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;border-radius:0 0 18px 0}
+.pd-body{padding:48px 0 72px}
+.pd-grid{display:grid;gap:48px}
+.pd-block + .pd-block{margin-top:44px}
+.pd-block .h3{margin-bottom:16px}
+.vals{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.vals li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.vals li span:first-child{color:var(--muted)}
+.vals li b{font-weight:600}
+.desc p{margin:0 0 16px;font-size:16px;line-height:1.75;color:#2c3446}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font-size:13px}
+.bairro-card{display:grid;gap:14px;padding:24px;border-radius:var(--r);background:var(--navy);color:var(--porc);position:relative;overflow:hidden}
+.bairro-card .vlines{right:-40px;bottom:-60px;width:260px}
+.bairro-card p{margin:0;color:var(--grey);font-size:15px;position:relative}
+.bairro-card .h3{position:relative;margin:0}
+.bairro-card .link-arrow{position:relative;justify-self:start}
+.side{display:none}
+.side-card{position:sticky;top:96px;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:28px}
+.side-card .pd-price{color:var(--navy);font-size:30px}
+.side-card .vals{margin:18px 0 22px}
+.side-card .btn{width:100%}
+.side-card .btn + .btn{margin-top:10px}
+.side-card .btn:first-of-type{margin-top:24px}
+.side-note{margin:16px 0 0;font-size:12px;color:var(--muted);text-align:center}
+.cta-bar{position:fixed;z-index:30;left:0;right:0;bottom:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(243,244,239,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cta-bar .btn{padding:0 12px}
+
+/* lightbox */
+.lb{position:fixed;z-index:80;inset:0;background:rgba(10,13,19,.97);color:var(--porc);display:flex;flex-direction:column}
+.lb-top{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;font-size:13px;letter-spacing:.08em}
+.lb-stage{flex:1;display:flex;align-items:center;justify-content:center;padding:0 8px;min-height:0}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px}
+.lb-nav{display:flex;justify-content:center;gap:12px;padding:16px 16px calc(20px + env(safe-area-inset-bottom))}
+
+/* ===== busca ===== */
+.sr-top{padding:104px 0 8px}
+.sr-tools{display:grid;gap:12px;margin-top:24px}
+.sr-tools .tabs{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:4px;max-width:520px}
+.sr-tools .tabs{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+.tab-ind{position:absolute;z-index:0;top:4px;bottom:4px;left:4px;width:calc((100% - 8px) / 3);border-radius:999px;background:var(--navy);box-shadow:0 2px 8px rgba(14,19,28,.18);transition:transform .5s cubic-bezier(.65,0,.25,1)}
+.tab-ind.pos-1{transform:translateX(100%)}
+.tab-ind.pos-2{transform:translateX(200%)}
+.sr-tools .tab{position:relative;z-index:1;padding:0 10px;font-size:14px;transition:color .4s var(--ease)}
+.sr-tools .tab:hover{color:var(--navy)}
+.sr-tools .tab.is-on{background:transparent;color:var(--porc)}
+@media (prefers-reduced-motion:reduce){.tab-ind{transition:none}}
+.sr-search{display:flex;gap:8px}
+.filters{display:none;gap:22px;margin-top:8px;padding:22px;background:var(--paper);border:1px solid var(--line);border-radius:18px}
+.filters.is-open{display:grid}
+.fgroup h6{margin:0 0 10px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.fopts{display:flex;flex-wrap:wrap;gap:8px}
+.fopt{min-height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;font-family:var(--display);font-weight:600;font-size:14px}
+.fopt.is-on{background:var(--navy);border-color:var(--navy);color:var(--porc)}
+.sr-count{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:28px 0 20px;font-size:14px;color:var(--muted)}
+.empty{padding:56px 24px;text-align:center;border:1px dashed var(--line);border-radius:20px}
+.empty .h3{margin-bottom:10px}
+.empty p{margin:0 auto 22px;max-width:420px;color:var(--muted)}
+
+/* Montserrat na busca, nas sugestões, nos cards, nos endereços e no rodapé */
+.sug,.sr-top,.sr-top + section,.card-body,.ftr,.unit,.menu-units{font-family:var(--display)}
+.sug-txt span,.sug-empty,.sr-count,.empty p,.card-title,.unit p,.menu-units p,.ftr p,.ftr li,.ftr-bottom{font-weight:500}
+.fgroup h6,.ftr h5{font-weight:700;letter-spacing:.08em}
+
+@media (min-width:700px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .launch-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .videos{grid-auto-columns:38%}
+  .quotes{grid-auto-columns:46%}
+  .ftr-cols{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .search .btn span{display:inline}
+}
+@media (min-width:1000px){
+  .wrap{padding:0 40px}
+  .h1{font-size:54px}
+  .h2{font-size:40px}
+  .h3{font-size:24px}
+  .sec{padding:112px 0}
+  .hdr{top:16px;left:24px;right:24px}
+  .hdr-bar{height:66px;padding:0 10px 0 26px}
+  .logo .wm{width:140px;height:19px}
+  .nav{display:flex}
+  .menu-pill{padding:0 18px}
+  .menu-pill-label{display:inline}
+  .menu-panel{--ox:14px;inset:14px;border-radius:28px;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);overflow:hidden;box-shadow:0 30px 80px rgba(14,19,28,.35)}
+  .menu-art{display:block;position:relative;overflow:hidden}
+  .menu-art-photo{position:absolute;left:-16%;top:10%;width:116%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;animation:mArtIn 1.3s var(--ease) .15s both}
+  .menu-art-photo img{width:100%;height:100%;object-fit:cover}
+  .menu-art .vmark{position:absolute;left:44%;top:56%;width:78%;color:var(--porc);transform:translate(-50%,-50%);animation:mVIn 1s var(--ease) .4s both}
+  .menu-side{padding:26px 40px 36px;overflow:auto;max-height:100%}
+  .menu-wm{position:absolute;left:44px;top:42px;z-index:2}
+  .menu-top{justify-content:flex-end}
+  .menu-top-actions .btn{padding:0 20px}
+  .menu-top-actions .btn span{display:inline}
+  .menu-body{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;margin-top:48px;align-items:start}
+  .menu-main button{font-size:42px}
+  .menu-cols{border-left:1px solid var(--line);padding-left:36px}
+  .menu-foot{justify-content:flex-end}
+  .menu-foot .btn{flex:0 0 auto;padding:0 28px}
+  .hero{height:860px}
+  .hero .h1{font-size:56px}
+  .hero-sub{font-size:18px}
+  .hero-tab{padding:0 20px;font-size:16px}
+  .sheet{margin-top:-56px;border-radius:56px 56px 0 0}
+  .tabs{max-width:420px}
+  .intro{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:80px;align-items:end}
+  .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .prive-in{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+  .prive-media{min-height:620px}
+  .prive-body{padding:64px 56px;display:flex;flex-direction:column;justify-content:center}
+  .prive-price{font-size:34px}
+  .bairros{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:260px}
+  .bairro:first-child{grid-column:span 2;grid-row:span 2;min-height:0}
+  .bairro{min-height:0;padding:22px}
+  .bairro h3{font-size:24px}
+  .videos{grid-auto-columns:calc((100% - 42px)/4);overflow:visible}
+  .quotes{grid-auto-columns:calc((100% - 48px)/4);overflow:visible}
+  .owner-in{grid-template-columns:1fr auto}
+  .ftr-top{grid-template-columns:minmax(0,1fr) minmax(0,2.2fr)}
+  .ftr{padding-bottom:48px}
+  .pd-top{padding:112px 0 56px}
+  .gal{grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr);grid-template-rows:280px 280px}
+  .gal-main{grid-column:1;grid-row:1 / span 2;aspect-ratio:auto}
+  .gal-th{aspect-ratio:auto}
+  .gal-all{display:inline-flex;position:absolute;right:16px;bottom:16px;min-height:40px;padding:0 18px;border-radius:999px;background:rgba(243,244,239,.94);color:var(--navy);align-items:center;font-family:var(--display);font-weight:700;font-size:13px}
+  .gal-th .gal-more{display:none}
+  .gal-th.is-last{position:relative}
+  .pd-head{grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px 48px}
+  .pd-head .h1{font-size:46px;max-width:820px}
+  .pd-price{font-size:40px;text-align:right}
+  .specs{grid-column:1 / -1}
+  .pd-grid{grid-template-columns:minmax(0,1fr) 380px;gap:72px}
+  .side{display:block}
+  .cta-bar{display:none}
+  .sr-top{padding:132px 0 8px}
+  .sr-tools{grid-template-columns:auto 1fr;align-items:center}
+  .filters{display:grid;grid-template-columns:repeat(4,minmax(0,auto));justify-content:start;gap:32px}
+  .filters-btn{display:none}
+}
+</style>
+</helmet>
+
+<div class="site" id="top">
+
+<!-- ===== CABEÇALHO ===== -->
+<header class="{{hdrCls}}">
+  <div class="hdr-bar">
+    <button class="logo" onClick="{{goHome}}" aria-label="Vivere, página inicial">
+      <svg class="wm" viewBox="223.64 497.37 632.71 85.26" fill="currentColor" aria-hidden="true"><path d="M 224.64 498.37 L 239.76 498.37 L 276.50 562.51 L 313.12 498.37 L 328.25 498.37 L 280.81 581.59 L 272.07 581.59 Z"/><path d="M 359.48 498.37 L 372.83 498.37 L 372.83 581.59 L 359.48 581.59 Z"/><path d="M 404.07 498.37 L 419.19 498.37 L 455.92 562.51 L 492.55 498.37 L 507.67 498.37 L 460.24 581.59 L 451.5 581.59 Z"/><path d="M 703.87 539.54 C 710.25 539.54 714.88 538.41 717.75 536.14 C 720.62 533.88 722.07 530.34 722.07 525.54 C 722.07 520.78 720.62 517.26 717.75 515 C 714.88 512.73 710.25 511.60 703.87 511.60 L 665.53 511.60 L 665.53 539.54 Z M 652.19 498.37 L 703.87 498.37 C 710.13 498.37 715.66 499.49 720.44 501.73 C 725.23 503.98 728.92 507.15 731.54 511.25 C 734.16 515.34 735.47 520.10 735.47 525.54 C 735.47 529.87 734.62 533.80 732.93 537.32 C 731.24 540.85 728.81 543.82 725.64 546.24 C 722.47 548.66 718.71 550.41 714.39 551.47 L 741.03 581.59 L 723.36 581.59 L 697.85 552.77 L 665.53 552.77 L 665.53 581.59 L 652.19 581.59 Z"/><path d="M 552.25 511.60 L 614.92 511.60 L 614.92 498.37 L 538.91 498.37 C 538.91 502.78 538.91 507.19 538.91 511.59 C 543.35 511.60 547.80 511.60 552.25 511.60"/><path d="M 552.25 545.93 L 606.71 545.93 L 606.71 532.82 L 552.25 532.82 C 547.80 532.82 543.35 532.82 538.91 532.82 L 538.91 545.93 C 543.35 545.93 547.80 545.93 552.25 545.93"/><path d="M 552.25 568.48 L 538.89 568.49 C 538.90 572.86 538.90 577.23 538.91 581.59 L 615.99 581.59 L 615.99 568.48 Z"/><path d="M 791.62 511.63 L 854.29 511.63 L 854.29 498.40 L 778.27 498.40 C 778.27 502.80 778.27 507.21 778.27 511.62 C 782.72 511.62 787.17 511.63 791.62 511.63"/><path d="M 791.62 545.96 L 846.08 545.96 L 846.08 532.85 L 791.62 532.85 C 787.17 532.85 782.72 532.85 778.26 532.85 L 778.26 545.96 Z"/><path d="M 791.62 568.51 L 778.26 568.52 C 778.26 572.89 778.26 577.26 778.27 581.62 L 855.35 581.62 L 855.35 568.51 Z"/></svg>
+    </button>
+    <nav class="nav" aria-label="Principal">
+      <button onClick="{{goComprar}}">Comprar</button>
+      <button onClick="{{goAlugar}}">Alugar</button>
+      <button onClick="{{goLanc}}">Lançamentos</button>
+      <button onClick="{{goBairros}}">Bairros</button>
+      <button onClick="{{goContato}}">Contato</button>
+    </nav>
+    <div class="hdr-actions">
+      <button class="icon-btn" onClick="{{goBusca}}" aria-label="Buscar imóveis">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+      <button class="menu-pill" onClick="{{openMenu}}" aria-label="Abrir menu" aria-expanded="{{menu}}">
+        <span class="menu-pill-label">Menu</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M9 16h11"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<sc-if value="{{menu}}" hint-placeholder-val="{{false}}">
+  <div class="{{menuCls}}" role="dialog" aria-modal="true" aria-label="Menu">
+   <div class="menu-panel" style="--mx: {{mx}}px; --my: {{my}}px">
+    <div class="menu-art" aria-hidden="true">
+      <div class="menu-art-photo"><img src="/_blob/5af18f34b91ee5540b6f133f172e212b" alt=""></div>
+      <svg class="vmark" viewBox="308.67 376.70 462.66 326.61" fill="currentColor"><path d="M 732.12 378.33 L 729.03 382.60 C 676.84 454.89 624.65 527.17 572.46 599.45 L 523.56 667.19 L 512.28 648.52 L 709.23 377.69 L 668.01 377.69 L 493.55 617.52 L 367.23 408.40 L 428.60 408.40 L 428.60 378.36 L 309.66 378.36 L 505.38 702.30 L 539.99 702.29 L 770.33 378.33 Z"/></svg>
+    </div>
+    <div class="menu-side">
+    <div class="menu-top">
+      <svg class="wm menu-wm" viewBox="223.64 497.37 632.71 85.26" fill="currentColor" aria-hidden="true"><path d="M 224.64 498.37 L 239.76 498.37 L 276.50 562.51 L 313.12 498.37 L 328.25 498.37 L 280.81 581.59 L 272.07 581.59 Z"/><path d="M 359.48 498.37 L 372.83 498.37 L 372.83 581.59 L 359.48 581.59 Z"/><path d="M 404.07 498.37 L 419.19 498.37 L 455.92 562.51 L 492.55 498.37 L 507.67 498.37 L 460.24 581.59 L 451.5 581.59 Z"/><path d="M 703.87 539.54 C 710.25 539.54 714.88 538.41 717.75 536.14 C 720.62 533.88 722.07 530.34 722.07 525.54 C 722.07 520.78 720.62 517.26 717.75 515 C 714.88 512.73 710.25 511.60 703.87 511.60 L 665.53 511.60 L 665.53 539.54 Z M 652.19 498.37 L 703.87 498.37 C 710.13 498.37 715.66 499.49 720.44 501.73 C 725.23 503.98 728.92 507.15 731.54 511.25 C 734.16 515.34 735.47 520.10 735.47 525.54 C 735.47 529.87 734.62 533.80 732.93 537.32 C 731.24 540.85 728.81 543.82 725.64 546.24 C 722.47 548.66 718.71 550.41 714.39 551.47 L 741.03 581.59 L 723.36 581.59 L 697.85 552.77 L 665.53 552.77 L 665.53 581.59 L 652.19 581.59 Z"/><path d="M 552.25 511.60 L 614.92 511.60 L 614.92 498.37 L 538.91 498.37 C 538.91 502.78 538.91 507.19 538.91 511.59 C 543.35 511.60 547.80 511.60 552.25 511.60"/><path d="M 552.25 545.93 L 606.71 545.93 L 606.71 532.82 L 552.25 532.82 C 547.80 532.82 543.35 532.82 538.91 532.82 L 538.91 545.93 C 543.35 545.93 547.80 545.93 552.25 545.93"/><path d="M 552.25 568.48 L 538.89 568.49 C 538.90 572.86 538.90 577.23 538.91 581.59 L 615.99 581.59 L 615.99 568.48 Z"/><path d="M 791.62 511.63 L 854.29 511.63 L 854.29 498.40 L 778.27 498.40 C 778.27 502.80 778.27 507.21 778.27 511.62 C 782.72 511.62 787.17 511.63 791.62 511.63"/><path d="M 791.62 545.96 L 846.08 545.96 L 846.08 532.85 L 791.62 532.85 C 787.17 532.85 782.72 532.85 778.26 532.85 L 778.26 545.96 Z"/><path d="M 791.62 568.51 L 778.26 568.52 C 778.26 572.89 778.26 577.26 778.27 581.62 L 855.35 581.62 L 855.35 568.51 Z"/></svg>
+      <div class="menu-top-actions">
+        <a class="btn btn-line" href="{{waGeral}}" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+        <button class="btn btn-navy" onClick="{{goComprar}}" aria-label="Buscar imóvel">
+          <span>Buscar imóvel</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        </button>
+        <button class="menu-close" onClick="{{closeMenu}}" aria-label="Fechar menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="menu-body">
+      <nav class="menu-main" aria-label="Menu principal">
+        <button onClick="{{goComprar}}">Comprar</button>
+        <button onClick="{{goAlugar}}">Alugar</button>
+        <button onClick="{{goLanc}}">Lançamentos</button>
+        <button onClick="{{goBairros}}">Bairros</button>
+        <button onClick="{{goAval}}">Avaliações</button>
+        <button onClick="{{goContato}}">Contato</button>
+      </nav>
+      <div class="menu-cols">
+        <div class="menu-col">
+          <h6>Imóveis</h6>
+          <button onClick="{{goApt}}">Apartamentos</button>
+          <button onClick="{{goCasa}}">Casas</button>
+          <button onClick="{{openPrive}}">Vivere Privé</button>
+          <a href="{{waAnunciar}}" target="_blank" rel="noopener">Anunciar meu imóvel</a>
+        </div>
+        <div class="menu-col">
+          <h6>Bairros</h6>
+          <sc-for list="{{bairros}}" as="b" hint-placeholder-count="5">
+            <button onClick="{{b.open}}">{{b.nome}}</button>
+          </sc-for>
+        </div>
+        <div class="menu-col menu-units">
+          <h6>Unidades</h6>
+          <p><b>Jurerê Internacional</b>Rua dos Chernes, 90 · Loja 01</p>
+          <p><b>Porto da Lagoa</b>R. Ernesto Meyer Filho, 37 · Loja 3C</p>
+          <p><b>Santo Antônio de Lisboa</b>Caminho dos Açores, 1770</p>
+        </div>
+      </div>
+    </div>
+    <div class="menu-foot">
+      <a class="btn btn-navy" href="{{waGeral}}" target="_blank" rel="noopener">
+        Falar com um corretor
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8z"/></svg>
+      </a>
+      <a class="btn btn-line" href="{{waAnunciar}}" target="_blank" rel="noopener">
+        Anunciar meu imóvel
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    </div>
+   </div>
+  </div>
+</sc-if>
+
+<main>
+
+<!-- ===================== HOME ===================== -->
+<sc-if value="{{isHome}}" hint-placeholder-val="{{true}}">
+
+  <section class="hero" aria-label="Destaque">
+    <div class="hero-bg">
+      <img src="/_blob/b48eb9fc057e7ff2396cc0d2d20dae98" alt="Sala de jantar integrada ao jardim, casa no Cacupé">
+      <div class="hero-shade"></div>
+    </div>
+    <div class="hero-in">
+      <h1 class="h1">Morar ou investir, seu lugar é aqui.</h1>
+      <p class="hero-sub">A imobiliária mais bem avaliada de Florianópolis.</p>
+      <div class="hero-tabs" role="tablist" aria-label="Tipo de busca">
+        <span class="{{heroInd}}" aria-hidden="true"></span>
+        <sc-for list="{{heroTabs}}" as="t" hint-placeholder-count="3">
+          <button class="{{t.cls}}" role="tab" aria-selected="{{t.on}}" onClick="{{t.pick}}">{{t.label}}</button>
+        </sc-for>
+      </div>
+      <div class="hero-find" role="search">
+      <label class="hero-search">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input type="search" placeholder="Bairro, condomínio ou código do imóvel" aria-label="Bairro, condomínio ou código do imóvel" autocomplete="off" aria-autocomplete="list" aria-expanded="{{sugOpen}}" value="{{hq}}" onInput="{{onHq}}" onKeyDown="{{onHqKey}}" onFocus="{{onHqFocus}}" onBlur="{{onHqBlur}}">
+        <button class="{{goCls}}" onClick="{{doHeroSearch}}" aria-label="Buscar">
+          <svg class="a1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path class="ah" d="M14 6l6 6-6 6"/></svg>
+          <svg class="a2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 12h15M14 6l6 6-6 6"/></svg>
+        </button>
+      </label>
+      <sc-if value="{{sugOpen}}" hint-placeholder-val="{{false}}">
+        <div class="{{sugCls}}" role="listbox" aria-label="Sugestões">
+          <sc-for list="{{sugGroups}}" as="g" hint-placeholder-count="2">
+            <div class="sug-group">
+              <div class="sug-title">{{g.title}}</div>
+              <sc-for list="{{g.items}}" as="s" hint-placeholder-count="2">
+                <button class="{{s.cls}}" role="option" aria-selected="{{s.on}}" onMouseDown="{{s.pick}}" onMouseEnter="{{s.hover}}">
+                  <span class="sug-ico">
+                    <sc-if value="{{s.isBairro}}" hint-placeholder-val="{{true}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg></sc-if>
+                    <sc-if value="{{s.isCondo}}" hint-placeholder-val="{{false}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V5l7-2v18M12 8l7 2v11M3 21h18M8 9h1M8 13h1M8 17h1M15 13h1M15 17h1"/></svg></sc-if>
+                    <sc-if value="{{s.isImovel}}" hint-placeholder-val="{{false}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-6 8 6v9H4zM10 20v-5h4v5"/></svg></sc-if>
+                  </span>
+                  <span class="sug-txt"><b>{{s.label}}</b><span>{{s.sub}}</span></span>
+                </button>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{sugEmpty}}" hint-placeholder-val="{{false}}">
+        <div class="{{sugCls}}"><div class="sug-empty">Nenhum bairro, condomínio ou código encontrado. Pressione Enter para buscar em todos os imóveis.</div></div>
+      </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sheet">
+    <div class="wrap intro">
+      <div>
+        <h2 class="h2">Curadoria de imóveis de alto padrão em Florianópolis, com <em>atendimento de quem vive a ilha.</em></h2>
+      </div>
+      <div class="units">
+        <div class="unit"><h4>Jurerê Internacional</h4><p>Rua dos Chernes, 90 · Loja 01</p></div>
+        <div class="unit"><h4>Porto da Lagoa</h4><p>R. Ernesto Meyer Filho, 37 · Loja 3C</p></div>
+        <div class="unit"><h4>Santo Antônio de Lisboa</h4><p>Caminho dos Açores, 1770</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top: 0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 class="h2">Imóveis <em>selecionados</em></h2>
+          <p class="lead">Uma seleção, não um catálogo.</p>
+        </div>
+        <button class="link-arrow" onClick="{{goComprar}}">Ver todos os imóveis
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 12h15M14 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+      <div class="grid">
+        <sc-for list="{{cards}}" as="p" hint-placeholder-count="4">
+          <a class="card" href="#top" onClick="{{p.open}}">
+            <div class="card-media">
+              <img src="{{p.cover}}" alt="{{p.alt}}" loading="lazy">
+              <sc-if value="{{p.prive}}" hint-placeholder-val="{{false}}"><span class="badge-prive">Vivere Privé</span></sc-if>
+            </div>
+            <div class="card-body">
+              <div class="card-price">{{p.precoFmt}}</div>
+              <div class="card-title">{{p.tipo}} · {{p.bairro}}</div>
+              <div class="card-meta">{{p.meta}} · <span class="card-code">{{p.codigo}}</span></div>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec prive" aria-label="Vivere Privé">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 class="h2">Vivere Privé</h2>
+          <p class="lead" style="color: #D7CFC4">Imóveis com exclusividade Vivere.</p>
+        </div>
+      </div>
+      <div class="prive-in">
+        <div class="prive-media">
+          <img src="/_blob/8954c1836a0e50b9e3ae76ea29658449" alt="Banheira de imersão voltada para o jardim, suíte master" loading="lazy">
+        </div>
+        <div class="prive-body">
+          <svg class="vlines" viewBox="0 0 400 300" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M20 10 L200 290 L380 10"/><path d="M70 10 L215 240"/><path d="M110 10 L230 200"/></svg>
+          <img class="seal" src="/_blob/987a1d35c1324f166ca8aa1f1d32e4e6" alt="">
+          <p class="eyebrow">Casa · Cacupé</p>
+          <h3 class="h2" style="font-size: 30px">Casa contemporânea com vista para o mar</h3>
+          <div class="prive-price">R$ 14.300.000</div>
+          <div class="prive-meta">4 dormitórios · 3 suítes · 1.018 m² · CA195</div>
+          <p class="prive-note">Três suítes com closet e sacada voltadas para o mar, e uma suíte master de 53 m² com banheira de imersão.</p>
+          <div>
+            <a class="btn btn-light" href="#top" onClick="{{openPrive}}">Conhecer o imóvel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark" aria-label="Lançamentos">
+    <svg class="vlines" viewBox="0 0 400 300" fill="none" stroke="currentColor" stroke-width=".6" aria-hidden="true"><path d="M20 10 L200 290 L380 10"/><path d="M70 10 L215 240"/></svg>
+    <div class="wrap" style="position: relative">
+      <div class="sec-head">
+        <div>
+          <h2 class="h2">Lançamentos</h2>
+          <p class="lead">Os empreendimentos que a Vivere acompanha.</p>
+        </div>
+        <button class="link-arrow" onClick="{{goLanc}}">Ver lançamentos
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 12h15M14 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+      <div class="launch-grid">
+        <button class="launch" onClick="{{goLanc}}">
+          <img src="/_blob/45d2386018637bd05d54b88c73817d13" alt="Living de apartamento no Quay Luxury Home Design" loading="lazy">
+          <span class="shade"></span>
+          <span class="launch-body">
+            <span class="eyebrow" style="display: block">Jurerê Internacional</span>
+            <span class="h3" style="display: block">Quay Luxury Home Design</span>
+          </span>
+        </button>
+        <button class="launch" onClick="{{goLanc}}">
+          <span class="launch-ph">[imagens do empreendimento]</span>
+          <span class="launch-body">
+            <span class="eyebrow" style="display: block">Santo Antônio de Lisboa</span>
+            <span class="h3" style="display: block">Vista Artefacto</span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="bairros" aria-label="Bairros">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 class="h2">Bairros</h2>
+          <p class="lead">Onde ficam os imóveis e como é morar em cada um.</p>
+        </div>
+      </div>
+      <div class="bairros">
+        <sc-for list="{{bairros}}" as="b" hint-placeholder-count="5">
+          <button class="{{b.cls}}" onClick="{{b.open}}">
+            <sc-if value="{{b.img}}" hint-placeholder-val="{{true}}"><img src="{{b.img}}" alt="" loading="lazy"><span class="shade"></span></sc-if>
+            <sc-if value="{{b.noImg}}" hint-placeholder-val="{{false}}"><svg class="vlines" viewBox="0 0 400 300" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M20 10 L200 290 L380 10"/><path d="M70 10 L215 240"/></svg></sc-if>
+            <span class="bairro-body">
+              <h3>{{b.nome}}</h3>
+              <p>{{b.texto}}</p>
+            </span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top: 0" aria-label="Vídeos">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <h2 class="h2">Conheça os imóveis por dentro</h2>
+        </div>
+      </div>
+      <div class="videos">
+        <sc-for list="{{videos}}" as="v" hint-placeholder-count="4">
+          <button class="video" onClick="{{v.open}}" aria-label="{{v.aria}}">
+            <img src="{{v.img}}" alt="" loading="lazy">
+            <span class="shade"></span>
+            <span class="video-play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg></span>
+            <span class="video-cap"><b>{{v.titulo}}</b><span>{{v.sub}}</span></span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="avaliacoes" style="background: #FAFAF7" aria-label="Avaliações">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="rating">
+            <span class="rating-num">5,0</span>
+            <div>
+              <div class="stars" aria-label="5 de 5 estrelas">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8 6.6 19.7l1.1-6.1L3.2 9.4l6.1-.8z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8 6.6 19.7l1.1-6.1L3.2 9.4l6.1-.8z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8 6.6 19.7l1.1-6.1L3.2 9.4l6.1-.8z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8 6.6 19.7l1.1-6.1L3.2 9.4l6.1-.8z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8 6.6 19.7l1.1-6.1L3.2 9.4l6.1-.8z"/></svg>
+              </div>
+              <div class="rating-src">76 avaliações no Google · Vivere Jurerê Internacional</div>
+            </div>
+          </div>
+        </div>
+        <a class="link-arrow" href="https://www.google.com/maps/place/?q=place_id:ChIJj0flj7xFJ5UR6HMBkbAC2Vs" target="_blank" rel="noopener">Ver no Google
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 12h15M14 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="quotes">
+        <sc-for list="{{reviews}}" as="r" hint-placeholder-count="4">
+          <figure class="quote" style="margin: 0">
+            <p>“{{r.texto}}”</p>
+            <footer>
+              <svg class="g-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z"/><path fill="#FBBC05" d="M6.4 14c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.4H3.1a10 10 0 0 0 0 9.2z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.4L6.4 10C7.2 7.7 9.4 6 12 6z"/></svg>
+              Avaliação no Google
+            </footer>
+          </figure>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec owner" aria-label="Anuncie seu imóvel">
+    <div class="wrap owner-in">
+      <div>
+        <h2 class="h2">Seu imóvel merece <em>a mesma curadoria.</em></h2>
+        <p class="lead" style="color: #4A505B">Avaliação de mercado e divulgação para compradores qualificados, com atendimento de uma equipe que conhece cada bairro.</p>
+      </div>
+      <a class="btn btn-navy" href="{{waAnunciar}}" target="_blank" rel="noopener">Anunciar meu imóvel</a>
+    </div>
+  </section>
+
+</sc-if>
+
+<!-- ===================== BUSCA ===================== -->
+<sc-if value="{{isBusca}}" hint-placeholder-val="{{false}}">
+  <section class="sr-top">
+    <div class="wrap">
+      <h1 class="h1">{{srTitle}}</h1>
+      <div class="sr-tools">
+        <div class="tabs" role="tablist" aria-label="Tipo de busca">
+          <span class="{{srInd}}" aria-hidden="true"></span>
+          <sc-for list="{{srTabs}}" as="t" hint-placeholder-count="3">
+            <button class="{{t.cls}}" role="tab" aria-selected="{{t.on}}" onClick="{{t.pick}}">{{t.label}}</button>
+          </sc-for>
+        </div>
+        <div class="sr-search">
+          <label class="field">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <input type="search" placeholder="Bairro, condomínio ou código" aria-label="Bairro, condomínio ou código" value="{{q}}" onInput="{{onQ}}">
+          </label>
+          <button class="btn btn-line filters-btn" onClick="{{toggleFilters}}" aria-expanded="{{filtersOpen}}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>
+            Filtros
+          </button>
+        </div>
+      </div>
+      <sc-if value="{{isComprar}}" hint-placeholder-val="{{true}}">
+        <div class="{{filtersCls}}">
+          <sc-for list="{{fgroups}}" as="g" hint-placeholder-count="4">
+            <div class="fgroup">
+              <h6>{{g.label}}</h6>
+              <div class="fopts">
+                <sc-for list="{{g.opts}}" as="o" hint-placeholder-count="3">
+                  <button class="{{o.cls}}" aria-pressed="{{o.on}}" onClick="{{o.pick}}">{{o.label}}</button>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <section style="padding: 0 0 96px">
+    <div class="wrap">
+      <sc-if value="{{isComprar}}" hint-placeholder-val="{{true}}">
+        <div class="sr-count"><span>{{countLabel}}</span><sc-if value="{{hasFilters}}" hint-placeholder-val="{{false}}"><button class="link-arrow" onClick="{{clearFilters}}">Limpar filtros</button></sc-if></div>
+        <sc-if value="{{hasResults}}" hint-placeholder-val="{{true}}">
+          <div class="grid cols-3">
+            <sc-for list="{{results}}" as="p" hint-placeholder-count="4">
+              <a class="card" href="#top" onClick="{{p.open}}">
+                <div class="card-media">
+                  <img src="{{p.cover}}" alt="{{p.alt}}" loading="lazy">
+                  <sc-if value="{{p.prive}}" hint-placeholder-val="{{false}}"><span class="badge-prive">Vivere Privé</span></sc-if>
+                </div>
+                <div class="card-body">
+                  <div class="card-price">{{p.precoFmt}}</div>
+                  <div class="card-title">{{p.tipo}} · {{p.bairro}}</div>
+                  <div class="card-meta">{{p.meta}} · <span class="card-code">{{p.codigo}}</span></div>
+                </div>
+              </a>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{noResults}}" hint-placeholder-val="{{false}}">
+          <div class="empty">
+            <h3 class="h3">Nenhum imóvel com esses filtros</h3>
+            <p>Ajuste a busca, ou conte para a gente o que procura que fazemos a curadoria para você.</p>
+            <a class="btn btn-navy" href="{{waGeral}}" target="_blank" rel="noopener">Falar com um corretor</a>
+          </div>
+        </sc-if>
+      </sc-if>
+
+      <sc-if value="{{isAlugar}}" hint-placeholder-val="{{false}}">
+        <div class="empty" style="margin-top: 28px">
+          <h3 class="h3">Locação anual</h3>
+          <p>Os imóveis para locação entram aqui quando o protótipo receber essa parte do cadastro.</p>
+          <a class="btn btn-navy" href="{{waAlugar}}" target="_blank" rel="noopener">Procuro um imóvel para alugar</a>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{isLanc}}" hint-placeholder-val="{{false}}">
+        <div class="launch-grid" style="margin-top: 28px">
+          <div class="launch">
+            <img src="/_blob/45d2386018637bd05d54b88c73817d13" alt="Living de apartamento no Quay Luxury Home Design" loading="lazy">
+            <span class="shade"></span>
+            <span class="launch-body">
+              <span class="eyebrow" style="display: block; color: #D7CFC4">Jurerê Internacional</span>
+              <span class="h3" style="display: block">Quay Luxury Home Design</span>
+            </span>
+          </div>
+          <div class="launch">
+            <span class="launch-ph">[imagens do empreendimento]</span>
+            <span class="launch-body">
+              <span class="eyebrow" style="display: block; color: #D7CFC4">Santo Antônio de Lisboa</span>
+              <span class="h3" style="display: block">Vista Artefacto</span>
+            </span>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+</sc-if>
+
+<!-- ===================== IMÓVEL ===================== -->
+<sc-if value="{{isImovel}}" hint-placeholder-val="{{false}}">
+  <section class="pd-top">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Você está em">
+        <button onClick="{{goHome}}">Início</button><span aria-hidden="true">/</span>
+        <button onClick="{{goComprar}}">Comprar</button><span aria-hidden="true">/</span>
+        <button onClick="{{im.openBairro}}">{{im.bairro}}</button><span aria-hidden="true">/</span>
+        <span>{{im.codigo}}</span>
+      </nav>
+
+      <div class="gal">
+        <button class="gal-main" onClick="{{im.open0}}" aria-label="Ampliar foto principal">
+          <img src="{{im.main}}" alt="{{im.alt}}">
+          <span class="gal-all">Ver todas as fotos ({{im.total}})</span>
+        </button>
+        <sc-for list="{{im.thumbs}}" as="t" hint-placeholder-count="4">
+          <button class="gal-th" onClick="{{t.open}}" aria-label="{{t.aria}}">
+            <img src="{{t.src}}" alt="" loading="lazy">
+            <sc-if value="{{t.more}}" hint-placeholder-val="{{false}}"><span class="gal-more">+{{t.moreN}}</span></sc-if>
+          </button>
+        </sc-for>
+      </div>
+
+      <div class="pd-head">
+        <div>
+          <sc-if value="{{im.prive}}" hint-placeholder-val="{{false}}"><span class="badge-prive-inline" style="margin-bottom: 18px">Vivere Privé</span></sc-if>
+          <p class="eyebrow">{{im.tipo}} · {{im.bairro}}</p>
+          <h1 class="h1">{{im.titulo}}</h1>
+          <p class="pd-code" style="margin: 12px 0 0">Código {{im.codigo}}</p>
+        </div>
+        <div class="pd-price">{{im.precoFmt}}</div>
+        <div class="specs">
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 15h18M6 10V7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v3"/></svg>{{im.dormLabel}}</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18v2a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5zM6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2"/></svg>{{im.suitesLabel}}</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 16l1.5-5a2 2 0 0 1 1.9-1.4h7.2a2 2 0 0 1 1.9 1.4L19 16M4 16h16v3H4zM7 19v1.5M17 19v1.5"/></svg>{{im.vagasLabel}}</span>
+          <span class="spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM4 9h5M15 20v-5h5"/></svg>{{im.areaLabel}}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pd-body">
+    <div class="wrap pd-grid">
+      <div>
+        <div class="pd-block">
+          <h2 class="h3">Detalhes</h2>
+          <ul class="vals">
+            <sc-for list="{{im.vals}}" as="v" hint-placeholder-count="3">
+              <li><span>{{v.k}}</span><b>{{v.v}}</b></li>
+            </sc-for>
+          </ul>
+        </div>
+        <div class="pd-block desc">
+          <h2 class="h3">Sobre o imóvel</h2>
+          <sc-for list="{{im.desc}}" as="d" hint-placeholder-count="3">
+            <p>{{d.t}}</p>
+          </sc-for>
+        </div>
+        <div class="pd-block">
+          <h2 class="h3">Diferenciais</h2>
+          <div class="chips">
+            <sc-for list="{{im.dif}}" as="c" hint-placeholder-count="6"><span class="chip">{{c.t}}</span></sc-for>
+          </div>
+        </div>
+        <div class="pd-block">
+          <div class="bairro-card">
+            <svg class="vlines" viewBox="0 0 400 300" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M20 10 L200 290 L380 10"/><path d="M70 10 L215 240"/></svg>
+            <p class="eyebrow" style="margin: 0; position: relative; color: #D7CFC4">O bairro</p>
+            <h2 class="h3">{{im.bairro}}</h2>
+            <p>{{im.bairroTexto}}</p>
+            <button class="link-arrow" onClick="{{im.openBairro}}">Ver imóveis no bairro
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 12h15M14 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side" aria-label="Contato sobre este imóvel">
+        <div class="side-card">
+          <h2 class="h3" style="margin: 0">Gostou deste imóvel?</h2>
+          <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.55; color: #59606C">Fale com um consultor Vivere sobre o {{im.codigo}} ou agende uma visita.</p>
+          <a class="btn btn-navy" href="{{im.wa}}" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8z"/></svg>
+            Falar no WhatsApp
+          </a>
+          <a class="btn btn-line" href="{{im.waVisita}}" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v5M16 3v5"/></svg>
+            Agendar visita
+          </a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top: 0">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="h2">Outros imóveis <em>selecionados</em></h2>
+        <button class="link-arrow" onClick="{{goComprar}}">Ver todos
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 12h15M14 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+      <div class="grid cols-3">
+        <sc-for list="{{similares}}" as="p" hint-placeholder-count="3">
+          <a class="card" href="#top" onClick="{{p.open}}">
+            <div class="card-media">
+              <img src="{{p.cover}}" alt="{{p.alt}}" loading="lazy">
+              <sc-if value="{{p.prive}}" hint-placeholder-val="{{false}}"><span class="badge-prive">Vivere Privé</span></sc-if>
+            </div>
+            <div class="card-body">
+              <div class="card-price">{{p.precoFmt}}</div>
+              <div class="card-title">{{p.tipo}} · {{p.bairro}}</div>
+              <div class="card-meta">{{p.meta}} · <span class="card-code">{{p.codigo}}</span></div>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-bar">
+    <a class="btn btn-navy" href="{{im.wa}}" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8z"/></svg>
+      WhatsApp
+    </a>
+    <a class="btn btn-line" href="{{im.waVisita}}" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v14H4zM4 10h16M8 3v5M16 3v5"/></svg>
+      Agendar visita
+    </a>
+  </div>
+
+  <sc-if value="{{lbOpen}}" hint-placeholder-val="{{false}}">
+    <div class="lb" role="dialog" aria-label="Galeria de fotos">
+      <div class="lb-top">
+        <span>{{lbCount}}</span>
+        <button class="icon-btn" onClick="{{lbClose}}" aria-label="Fechar galeria">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="lb-stage"><img src="{{lbSrc}}" alt="{{im.alt}}"></div>
+      <div class="lb-nav">
+        <button class="icon-btn" onClick="{{lbPrev}}" aria-label="Foto anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <button class="icon-btn" onClick="{{lbNext}}" aria-label="Próxima foto">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </sc-if>
+</sc-if>
+
+</main>
+
+<!-- ===================== RODAPÉ ===================== -->
+<footer class="ftr" id="contato">
+  <svg class="vlines" viewBox="0 0 400 300" fill="none" stroke="currentColor" stroke-width=".7" aria-hidden="true"><path d="M20 10 L200 290 L380 10"/><path d="M70 10 L215 240"/><path d="M110 10 L230 200"/></svg>
+  <div class="wrap">
+    <div class="ftr-top">
+      <div>
+        <img class="wm-tag" src="/_blob/793d0add90b27a43dcd14ecc01ca1654" alt="Vivere Imóveis Selecionados" width="220" height="52">
+        <p style="margin-top: 22px; max-width: 320px; color: #D7CFC4">Imóveis selecionados em Florianópolis. Há 3 anos, a confiança nos move.</p>
+      </div>
+      <div class="ftr-cols">
+        <div>
+          <h5>Unidades</h5>
+          <ul>
+            <li>Jurerê Internacional<br>Rua dos Chernes, 90 · Loja 01</li>
+            <li style="margin-top: 12px">Porto da Lagoa<br>R. Ernesto Meyer Filho, 37 · Loja 3C</li>
+            <li style="margin-top: 12px">Santo Antônio de Lisboa<br>Caminho dos Açores, 1770</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Imóveis</h5>
+          <ul>
+            <li><a href="#top" onClick="{{goComprar}}">Comprar</a></li>
+            <li><a href="#top" onClick="{{goAlugar}}">Alugar</a></li>
+            <li><a href="#top" onClick="{{goLanc}}">Lançamentos</a></li>
+            <li><a href="{{waAnunciar}}" target="_blank" rel="noopener">Anunciar meu imóvel</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contato</h5>
+          <ul>
+            <li><a href="{{waGeral}}" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/imoveis.vivere/" target="_blank" rel="noopener">Instagram @imoveis.vivere</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="ftr-bottom">
+      <span>© 2026 Vivere Imóveis Selecionados · CRECI/SC 8883-J</span>
+      <span>Protótipo de design · conteúdo real de 4 imóveis</span>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"screen":{"editor":"enum","options":["home","busca","imovel"],"default":"home"},"imovel":{"editor":"enum","options":["AP183","AP365","CA195","CA217"],"default":"AP183"},"$preview":{"width":390,"height":7400}}'>
+var WA = '5548991979159';
+function waLink(msg){ return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg); }
+function brl(n){ return 'R$ ' + Number(n).toLocaleString('pt-BR'); }
+function norm(s){ return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+
+var BAIRROS = {
+  'Jurerê Internacional': 'Bairro planejado à beira-mar, no norte da ilha, entre praia, beach clubs e ruas arborizadas.',
+  'Jurerê': 'Praia de águas calmas, vizinha de Jurerê Internacional, com clima residencial.',
+  'Novo Campeche': 'Sul da ilha, com rotina a pé até a praia, cafés, academias e serviços.',
+  'Santo Antônio de Lisboa': 'Casario açoriano e pôr do sol sobre a baía norte.',
+  'Cacupé': 'Residencial tranquilo junto à natureza, com vista para a baía norte.'
+};
+
+var IMOVEIS = [
+  { codigo: 'AP183', tipo: 'Apartamento', bairro: 'Jurerê Internacional', condominio: 'Quay Luxury Home Design',
+    titulo: 'Apartamento mobiliado no Quay Luxury Home Design', preco: 7900000, cond: null, iptu: null, vm2: 40721,
+    dorm: 3, suites: 3, banh: 4, vagas: 2, area: 194, areaTipo: 'privativa', prive: false,
+    desc: [
+      'Conheça este sofisticado apartamento à venda no Quay Luxury Home Design, um dos empreendimentos mais exclusivos de Jurerê Internacional.',
+      'Com 194 m² de área privativa, o imóvel conta com 03 suítes finamente mobiliadas e decoradas, com móveis planejados e assinados de alto padrão. A cozinha, equipada com eletrodomésticos modernos, é integrada à sala de estar e jantar, criando um living amplo e elegante, com grandes esquadrias que garantem iluminação natural e valorizam cada ambiente. A suíte master dispõe de sacada com vista para o mar, tornando o espaço ainda mais especial. Além disso, o apartamento conta com 02 vagas de garagem.',
+      'O Quay Luxury Home Design oferece uma infraestrutura completa, com piscinas, spa, academia, brinquedoteca, áreas gourmet e serviço de praia exclusivo, garantindo sofisticação, lazer e conforto em um dos endereços mais desejados de Florianópolis.'
+    ],
+    dif: ['Mobiliado e decorado', 'Suíte master com vista para o mar', 'Piscinas', 'Spa', 'Academia', 'Brinquedoteca', 'Áreas gourmet', 'Serviço de praia'],
+    alt: 'Living integrado do apartamento AP183 no Quay',
+    l: ['/_blob/5af18f34b91ee5540b6f133f172e212b','/_blob/45d2386018637bd05d54b88c73817d13','/_blob/e0e53e310160ab078031bc8b3b55a284','/_blob/dc2ca470c0361809422a388cf030a976','/_blob/6acff221aba995dd1d6383878bf029eb','/_blob/40ad071ef95d36b547a55dafba3bacf9','/_blob/c53eeccda76d612e4c333807b2cbc22e','/_blob/9b2db3b762d16ad5f93cc1bbfed345f0','/_blob/2b82e481216e68fb91feb11bf22c7ccf','/_blob/2f6f5bfa03237d0c106b4861b0a77a72'],
+    s: ['/_blob/bcde99510f1bf65f29dbd04d22985fd2','/_blob/1caaba0399ebe9e1b0e22cae825d7173','/_blob/2750657dc941fd6b27e7f389941c5302','/_blob/3af09260b05df71d550914a46bc92fdb','/_blob/d2785237079f895e67906571e1ad5af3'] },
+  { codigo: 'CA195', tipo: 'Casa', bairro: 'Cacupé', condominio: 'Vivá Residence',
+    titulo: 'Casa contemporânea com vista para o mar no Cacupé', preco: 14300000, cond: null, iptu: null, vm2: 14047,
+    dorm: 4, suites: 3, banh: 4, vagas: 2, area: 1018, areaTipo: 'construída', terreno: 760, prive: true,
+    desc: [
+      'Conheça esta casa contemporânea recém-construída, localizada no Condomínio Vivá Residence, em Cacupé, uma das regiões mais privilegiadas de Florianópolis. Com 1.018 m² de área construída em um terreno de 760 m², a residência foi projetada com um estilo cozy, combinando elegância, simplicidade e uma vista privilegiada para o mar.',
+      'A casa possui ambientes amplos, iluminados e integrados à natureza, além de 04 dormitórios, sendo 03 amplas suítes no andar superior, todas com closets e sacadas com vista para o mar. A suíte master, com 53 m², conta ainda com uma charmosa banheira de imersão voltada para um jardim, proporcionando um ambiente exclusivo e acolhedor.',
+      'No térreo, o imóvel dispõe de 01 dormitório adicional, ideal para hóspedes, além de um escritório reversível em dormitório, oferecendo versatilidade para diferentes necessidades. Uma residência que reúne amplitude, conforto, arquitetura contemporânea e uma localização privilegiada junto à natureza e ao mar.'
+    ],
+    dif: ['Vista para o mar', 'Suíte master de 53 m²', 'Banheira de imersão', 'Suítes com closet e sacada', 'Escritório', 'Piscina', 'Churrasqueira', 'Condomínio com portão eletrônico'],
+    alt: 'Sala de jantar integrada ao jardim, casa CA195 no Cacupé',
+    l: ['/_blob/b48eb9fc057e7ff2396cc0d2d20dae98','/_blob/8954c1836a0e50b9e3ae76ea29658449','/_blob/2cf721fc83bc686c12de8df09bf5c2ac','/_blob/56796aa4f8b3dff622a63fe621bea7e8','/_blob/c754c0b336fd2fa05e7e7f5777716f6a','/_blob/3ca14ba79be712a2cdb4ed4d5869f5c3','/_blob/09db7a38101ecaa9b2594a57b2c4c07f','/_blob/4bd942200071d4ddd7c03bfebe110317','/_blob/3a63bbaac8b09238ec7feabe200c2697','/_blob/6891374fd958561e501cf14f5cf44163','/_blob/d7e3263495408f453a7348ad5b1881ca'],
+    s: ['/_blob/3456d39c52db85d695eb1ea09a7bc6f4','/_blob/db6876709dc474ca429fe96b2213fc3b','/_blob/0a0a8fbcb91acfd83da1e001725df281','/_blob/9dc75a7d997875310ce40bfe4110267b','/_blob/43ede02ee305765e8ea908840b2f0c95'] },
+  { codigo: 'AP365', tipo: 'Apartamento', bairro: 'Jurerê Internacional', condominio: 'Quay',
+    titulo: 'Apartamento de 3 suítes no Condomínio Quay', preco: 5300000, cond: 2400, iptu: 9000, vm2: 30994,
+    dorm: 3, suites: 3, banh: 4, vagas: 2, area: 171, areaTipo: 'privativa', prive: false,
+    desc: [
+      'Conheça este sofisticado apartamento no Condomínio Quay, localizado em uma das regiões mais exclusivas de Jurerê Internacional, ideal para quem busca amplitude, conforto e alto padrão.',
+      'Com 171 m² de área privativa, o imóvel conta com 03 suítes, oferecendo ambientes amplos, elegantes e muito bem distribuídos. As áreas de estar, jantar e cozinha são integradas, formando um living moderno e aconchegante, perfeito para receber familiares e amigos. Possui ainda 02 vagas de garagem.',
+      'O Condomínio Quay oferece uma infraestrutura completa de lazer e bem-estar, com piscina, academia e sauna, proporcionando conforto, exclusividade e qualidade de vida em um dos endereços mais valorizados de Florianópolis.'
+    ],
+    dif: ['Living integrado', 'Sacada', 'Ar-condicionado', 'Churrasqueira', 'Área de serviço', 'Despensa', 'Piscina', 'Academia', 'Sauna'],
+    alt: 'Sacada do apartamento AP365 no Quay, com vista para o verde',
+    l: ['/_blob/a8cd597e30638dd33bda2203c492bae1','/_blob/0baa24207cd6c2adeb80c9785e486230','/_blob/5845ac3b6eaab54353ec59a12f1742e3','/_blob/7cb60978cfd8a222c21e59a7994b5b41','/_blob/8903536079826f62e0d8d7c3c31de718','/_blob/d8fdcc480b4459bbe03167b7456979b7','/_blob/fd54451b46a226a9136e2c839d5711ec','/_blob/153f66d9203f56a4f75163b0f24e95b9'],
+    s: ['/_blob/e4d144445bb741db44cee1987a8c89df','/_blob/470e8f07987ef6e7a17da333c6c84499','/_blob/3c728a1b251a62e9790c02737c91446a','/_blob/d77bc076b37053e5b3e0211038f16f7c','/_blob/fbd9e320364b97b25889ee62ca693cf4'] },
+  { codigo: 'CA217', tipo: 'Casa', bairro: 'Novo Campeche', condominio: null,
+    titulo: 'Casa mobiliada a poucos passos da praia no Novo Campeche', preco: 4500000, cond: null, iptu: 2000, vm2: 16981,
+    dorm: 4, suites: 2, banh: 4, vagas: 4, area: 265, areaTipo: 'construída', terreno: 450, prive: false,
+    desc: [
+      'Com 265 m² de área construída em um terreno de 450 m², esta residência mobiliada e pronta para morar combina arquitetura, conforto e sofisticação em uma das regiões mais desejadas do Sul da Ilha. Os ambientes amplos, a iluminação natural e a escolha de materiais nobres valorizam cada detalhe do projeto.',
+      'No pavimento térreo, a área social integra as salas de estar e jantar à cozinha planejada, criando um ambiente acolhedor para o dia a dia e para receber convidados. A casa conta ainda com sala de TV, que pode ser convertida em dormitório, lavabo, lavanderia e garagem coberta com churrasqueira. O pátio ensolarado complementa a área externa, proporcionando privacidade e conexão com os ambientes internos. No pavimento superior, são 2 suítes, incluindo uma suíte master com closet e banheira de hidromassagem, além de um escritório amplo e um quarto adicional atualmente utilizado como closet. A planta permite adaptar os espaços para acomodar até 4 dormitórios, conforme a necessidade.',
+      'Os acabamentos reforçam a personalidade da residência, com aberturas e escada em madeira maciça, porcelanato no térreo e madeira nobre no pavimento superior. Localizada no loteamento Novo Campeche, a poucos minutos de caminhada da praia, cafés, academias, mercados e serviços, esta casa oferece a praticidade de uma rotina próxima ao mar, com a possibilidade de fazer diversas atividades a pé.'
+    ],
+    dif: ['Mobiliada', 'Posição solar norte', 'Suíte master com hidromassagem', 'Escritório', 'Móveis planejados', 'Ar-condicionado', 'Churrasqueira', 'Hobby box', 'Dependência de empregada'],
+    alt: 'Fachada da casa CA217 no Novo Campeche',
+    l: ['/_blob/fd2ebbb30c6f7c162425d041e4ebf31f','/_blob/bcc92ea92d97073d6382697abd5fac6e','/_blob/2103684391140afdaf81135aaa78bcca','/_blob/8c28e4140eca67e92e139add3966bec1','/_blob/56700ea91e45f0cc765c9b299354c590','/_blob/4f1e06cd138d567c17e520b378ab0bee','/_blob/861e1981dcd1eb67f72a5a208f7b5b6e','/_blob/d0511e5068e44cdd25f066ab9c248ab3','/_blob/c6d51cd954d8fc9ffa30410faf3bd51d','/_blob/72778b325505ee0507f79f4bb880ce55'],
+    s: ['/_blob/eae458f7394d050c2d4111843d97a816','/_blob/697892cdc4884b604ce71827a6b09c79','/_blob/138f2bdfa2baf722d2cfe44da4777455','/_blob/ef0fc1c7b5205e341f466b99cdfeb50c','/_blob/b3d0c338132c9597235202f22b36ab03','/_blob/4f02dd1adc98087794a3ad3282c36e67'] }
+];
+
+var REVIEWS = [
+  'Comprei um apto com a imobiliária Vivere. Atendimento impecável. Negociação perfeita em todos os detalhes. Recomendo muito',
+  'Atendimento de alto padrão, condizente com os imóveis vendidos. Cláudio me ajudou a comprar um apartamento, mostrando diversas opções e apresentando o empreendimento com domínio e clareza, o que me deu segurança para concluir a compra.',
+  'Gostaria de agradecer ao Deivis, da Vivere Imóveis, por todo o atendimento, atenção e dedicação durante a compra do nosso imóvel. Sua disponibilidade e profissionalismo tornaram todo o processo muito mais tranquilo e seguro. Recomendo de olhos fechados!',
+  'Gostaria de expressar minha sincera gratidão pelo excelente trabalho realizado na busca do meu apartamento. Sua dedicação, atenção aos detalhes, paciência e profissionalismo fizeram toda a diferença durante esse processo tão importante.'
+];
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { screen: null, id: null, htab: 'comprar', hq: '', tab: 'comprar', q: '', tipo: 'todos', bairro: 'todos', suites: 0, ordem: 'rel', filtersOpen: false, lb: null, menu: false };
+  }
+  componentDidMount() {
+    var self = this;
+    this._onScroll = function(){ var s = (window.scrollY || 0) > 40; if (s !== !!self.state.scrolled) self.setState({ scrolled: s }); };
+    try { window.addEventListener('scroll', this._onScroll, { passive: true }); } catch (e) {}
+  }
+  componentWillUnmount() {
+    try { window.removeEventListener('scroll', this._onScroll); } catch (e) {}
+  }
+  componentDidUpdate(pp, ps) {
+    if (ps.screen !== this.state.screen || ps.id !== this.state.id) {
+      if (!this._anchor) { try { window.scrollTo(0, 0); } catch (e) {} }
+      if (this._anchor) {
+        var a = this._anchor; this._anchor = null;
+        setTimeout(function(){ try { var el = document.getElementById(a); if (el) el.scrollIntoView({ behavior: 'smooth' }); } catch (e) {} }, 30);
+      }
+    }
+  }
+  nav(patch, anchor) {
+    this._anchor = anchor || null;
+    var same = (patch.screen || this.screen()) === this.screen() && (!patch.id || patch.id === this.state.id);
+    this.setState(Object.assign({ menu: false, menuClosing: false, lb: null }, patch));
+    if (anchor && same) {
+      this._anchor = null;
+      setTimeout(function(){ try { var el = document.getElementById(anchor); if (el) el.scrollIntoView({ behavior: 'smooth' }); } catch (e) {} }, 30);
+    }
+  }
+  screen() { return this.state.screen || this.props.screen || 'home'; }
+  currentId() { return this.state.id || this.props.imovel || 'AP183'; }
+  card(p) {
+    var self = this;
+    var area = Number(p.area).toLocaleString('pt-BR') + ' m²';
+    return {
+      codigo: p.codigo, tipo: p.tipo, bairro: p.bairro, prive: p.prive, alt: p.alt,
+      cover: p.s[0], precoFmt: brl(p.preco),
+      meta: p.suites + ' suítes · ' + area + ' · ' + p.vagas + ' vagas',
+      open: function(e){ if (e && e.preventDefault) e.preventDefault(); self.nav({ screen: 'imovel', id: p.codigo }); }
+    };
+  }
+  renderVals() {
+    var self = this, st = this.state;
+    var screen = this.screen();
+    var go = function(patch, anchor){ return function(e){ if (e && e.preventDefault) e.preventDefault(); self.nav(patch, anchor); }; };
+
+    var tabDefs = [['comprar','Comprar'],['alugar','Alugar'],['lancamentos','Lançamentos']];
+    var heroTabs = tabDefs.map(function(t){ var on = st.htab === t[0]; return { label: t[1], on: on, cls: on ? 'hero-tab is-on' : 'hero-tab', pick: function(){ self.setState({ htab: t[0] }); } }; });
+    var srTabs = tabDefs.map(function(t){ var on = st.tab === t[0]; return { label: t[1], on: on, cls: on ? 'tab is-on' : 'tab', pick: function(){ self.setState({ tab: t[0] }); } }; });
+
+    var launch = function(fn){
+      var reduce = false; try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+      if (st.going) return;
+      if (reduce) { fn(); return; }
+      if (self._bt) clearTimeout(self._bt);
+      self.setState({ going: true, sugLeaving: true });
+      setTimeout(function(){ fn(); self.setState({ going: false, sugLeaving: false }); }, 580);
+    };
+    var doHeroSearch = function(){
+      if (flat.length) { launch(flat[0].act); return; }
+      var q = (st.hq || '').trim();
+      var found = IMOVEIS.filter(function(p){ return norm(p.codigo) === norm(q); })[0];
+      if (found) { launch(function(){ self.nav({ screen: 'imovel', id: found.codigo, hq: '', hfocus: false }); }); return; }
+      launch(function(){ self.nav({ screen: 'busca', tab: st.htab, q: q, hq: '', hfocus: false }); });
+    };
+
+    // busca
+    var nq = norm(st.q);
+    var results = IMOVEIS.filter(function(p){
+      if (st.tipo !== 'todos' && p.tipo !== st.tipo) return false;
+      if (st.bairro !== 'todos' && p.bairro !== st.bairro) return false;
+      if (st.suites && p.suites < st.suites) return false;
+      if (nq) { var hay = norm([p.codigo, p.tipo, p.bairro, p.condominio, p.titulo].join(' ')); if (hay.indexOf(nq) < 0) return false; }
+      return true;
+    });
+    if (st.ordem === 'maior') results = results.slice().sort(function(a,b){ return b.preco - a.preco; });
+    if (st.ordem === 'menor') results = results.slice().sort(function(a,b){ return a.preco - b.preco; });
+    var mkOpts = function(key, opts){ return opts.map(function(o){ var on = st[key] === o[0]; return { label: o[1], on: on, cls: on ? 'fopt is-on' : 'fopt', pick: function(){ var p = {}; p[key] = o[0]; self.setState(p); } }; }); };
+    var fgroups = [
+      { label: 'Tipo', opts: mkOpts('tipo', [['todos','Todos'],['Apartamento','Apartamentos'],['Casa','Casas']]) },
+      { label: 'Bairro', opts: mkOpts('bairro', [['todos','Todos'],['Jurerê Internacional','Jurerê Internacional'],['Jurerê','Jurerê'],['Novo Campeche','Novo Campeche'],['Santo Antônio de Lisboa','Santo Antônio de Lisboa'],['Cacupé','Cacupé']]) },
+      { label: 'Suítes', opts: mkOpts('suites', [[0,'Todas'],[2,'2+'],[3,'3+']]) },
+      { label: 'Ordenar', opts: mkOpts('ordem', [['rel','Seleção Vivere'],['maior','Maior preço'],['menor','Menor preço']]) }
+    ];
+    var hasFilters = st.tipo !== 'todos' || st.bairro !== 'todos' || !!st.suites || !!nq;
+    var srTitle = st.tab === 'alugar' ? 'Imóveis para alugar em Florianópolis' : (st.tab === 'lancamentos' ? 'Lançamentos em Florianópolis' : 'Imóveis à venda em Florianópolis');
+
+    // imóvel
+    var p = IMOVEIS.filter(function(x){ return x.codigo === self.currentId(); })[0] || IMOVEIS[0];
+    var total = p.l.length;
+    var thumbs = [1,2,3,4].map(function(i){
+      var more = i === 4 && total > 5;
+      return { src: p.s[i] || p.l[i], more: more, moreN: total - 5, aria: more ? ('Ver todas as ' + total + ' fotos') : ('Ampliar foto ' + (i + 1)), open: function(){ self.setState({ lb: i }); } };
+    });
+    var area = Number(p.area).toLocaleString('pt-BR') + ' m²';
+    var vals = [];
+    if (p.cond) vals.push({ k: 'Condomínio', v: brl(p.cond) });
+    if (p.iptu) vals.push({ k: 'IPTU', v: brl(p.iptu) });
+    vals.push({ k: 'Área ' + p.areaTipo, v: area });
+    if (p.terreno) vals.push({ k: 'Terreno', v: Number(p.terreno).toLocaleString('pt-BR') + ' m²' });
+    vals.push({ k: 'Valor por m²', v: brl(p.vm2) });
+    var valsSide = [];
+    if (p.cond) valsSide.push({ k: 'Condomínio', v: brl(p.cond) });
+    if (p.iptu) valsSide.push({ k: 'IPTU', v: brl(p.iptu) });
+    valsSide.push({ k: 'Valor por m²', v: brl(p.vm2) });
+    var ref = p.codigo + ' · ' + p.tipo + ' em ' + p.bairro + ' (' + brl(p.preco) + ')';
+    var im = {
+      codigo: p.codigo, tipo: p.tipo, bairro: p.bairro, titulo: p.titulo, prive: p.prive, alt: p.alt,
+      precoFmt: brl(p.preco), main: p.l[0], total: total, thumbs: thumbs,
+      open0: function(){ self.setState({ lb: 0 }); },
+      dormLabel: p.dorm + ' dorm.', suitesLabel: p.suites + ' suítes', vagasLabel: p.vagas + ' vagas', areaLabel: area,
+      vals: vals, valsSide: valsSide,
+      desc: p.desc.map(function(t){ return { t: t }; }),
+      dif: p.dif.map(function(t){ return { t: t }; }),
+      bairroTexto: BAIRROS[p.bairro] || '',
+      openBairro: go({ screen: 'busca', tab: 'comprar', bairro: p.bairro, q: '', tipo: 'todos', suites: 0 }),
+      wa: waLink('Olá! Vi no site o imóvel ' + ref + ' e gostaria de mais informações.'),
+      waVisita: waLink('Olá! Gostaria de agendar uma visita ao imóvel ' + ref + '. Qual o melhor dia e horário?')
+    };
+    var lbOpen = st.lb !== null && st.lb !== undefined && screen === 'imovel';
+    var lbi = lbOpen ? ((st.lb % total) + total) % total : 0;
+
+    var bairros = [
+      { nome: 'Jurerê Internacional', img: '/_blob/e4d144445bb741db44cee1987a8c89df' },
+      { nome: 'Cacupé', img: '/_blob/9dc75a7d997875310ce40bfe4110267b' },
+      { nome: 'Novo Campeche', img: '/_blob/4f02dd1adc98087794a3ad3282c36e67' },
+      { nome: 'Santo Antônio de Lisboa', img: null, tape: true },
+      { nome: 'Jurerê', img: null }
+    ].map(function(b){
+      var filtro = b.nome;
+      return { nome: b.nome, img: b.img, noImg: !b.img, texto: BAIRROS[b.nome], cls: b.tape ? 'bairro is-tape' : 'bairro',
+        open: go({ screen: 'busca', tab: 'comprar', bairro: filtro, q: '', tipo: 'todos', suites: 0 }) };
+    });
+
+    var vid = function(code, img, titulo, sub){ return { img: img, titulo: titulo, sub: sub, aria: 'Assistir: ' + titulo, open: go({ screen: 'imovel', id: code }) }; };
+    var videos = [
+      vid('CA195', '/_blob/db6876709dc474ca429fe96b2213fc3b', 'Casa no Cacupé', 'Tour pelo imóvel'),
+      vid('AP183', '/_blob/bcde99510f1bf65f29dbd04d22985fd2', 'Apartamento no Quay', 'Tour pelo imóvel'),
+      vid('CA217', '/_blob/eae458f7394d050c2d4111843d97a816', 'Casa no Novo Campeche', 'Tour pelo imóvel'),
+      vid('AP365', '/_blob/e4d144445bb741db44cee1987a8c89df', 'Apartamento em Jurerê', 'Tour pelo imóvel')
+    ];
+
+    // sugestões da busca do topo
+    var hqN = norm(st.hq).trim();
+    var BL = ['Jurerê Internacional','Jurerê','Novo Campeche','Santo Antônio de Lisboa','Cacupé'];
+    var CONDOS = [{ nome: 'Quay Luxury Home Design', q: 'quay', bairro: 'Jurerê Internacional' }, { nome: 'Vivá Residence', q: 'viva', bairro: 'Cacupé' }];
+    var hit = function(name){ var n = norm(name); return n.indexOf(hqN) >= 0 || n.split(/\s+/).some(function(w){ return w.indexOf(hqN) === 0; }); };
+    var plural = function(c){ return c === 1 ? '1 imóvel' : (c + ' imóveis'); };
+    var heroTab = st.htab === 'alugar' ? 'alugar' : 'comprar';
+    var gB = hqN ? BL.filter(hit).sort(function(a, b){ return (norm(b) === hqN) - (norm(a) === hqN); }).map(function(b){
+      var c = IMOVEIS.filter(function(p){ return p.bairro === b; }).length;
+      return { label: b, sub: c ? plural(c) : 'Consultar disponibilidade', isBairro: true,
+        act: function(){ self.nav({ screen: 'busca', tab: heroTab, bairro: b, q: '', tipo: 'todos', suites: 0, hq: '', hfocus: false, hi: -1 }); } };
+    }) : [];
+    var gC = hqN ? CONDOS.filter(function(c){ return hit(c.nome); }).map(function(c){
+      var n = IMOVEIS.filter(function(p){ return norm(p.condominio).indexOf(c.q) >= 0; }).length;
+      return { label: c.nome, sub: c.bairro + ' · ' + plural(n), isCondo: true,
+        act: function(){ self.nav({ screen: 'busca', tab: heroTab, bairro: 'todos', q: c.q, tipo: 'todos', suites: 0, hq: '', hfocus: false, hi: -1 }); } };
+    }) : [];
+    var gI = hqN ? IMOVEIS.filter(function(p){ return norm(p.codigo).indexOf(hqN) >= 0 || hit(p.titulo); }).slice(0, 4).map(function(p){
+      return { label: p.titulo, sub: p.codigo + ' · ' + brl(p.preco), isImovel: true,
+        act: function(){ self.nav({ screen: 'imovel', id: p.codigo, hq: '', hfocus: false, hi: -1 }); } };
+    }) : [];
+    var flat = [], sugGroups = [];
+    var addG = function(title, items){
+      if (!items.length) return;
+      sugGroups.push({ title: title, items: items.map(function(it){
+        var idx = flat.length; flat.push(it); var on = idx === st.hi;
+        return { label: it.label, sub: it.sub, isBairro: !!it.isBairro, isCondo: !!it.isCondo, isImovel: !!it.isImovel, on: on,
+          cls: on ? 'sug-item is-on' : 'sug-item',
+          pick: function(e){ if (e && e.preventDefault) e.preventDefault(); launch(it.act); },
+          hover: function(){ if (st.hi !== idx) self.setState({ hi: idx }); } };
+      }) });
+    };
+    addG('Bairros', gB); addG('Condomínios', gC); addG('Imóveis', gI);
+    var sugOpen = !!st.hfocus && !!hqN && flat.length > 0;
+    var sugEmpty = !!st.hfocus && !!hqN && flat.length === 0;
+
+    return {
+      sugGroups: sugGroups, sugOpen: sugOpen, sugEmpty: sugEmpty,
+      sugCls: st.sugLeaving ? 'sug is-leaving' : 'sug',
+      goCls: st.going ? 'hero-go is-going' : 'hero-go',
+      onHqFocus: function(){ if (self._bt) clearTimeout(self._bt); self.setState({ hfocus: true, sugLeaving: false }); },
+      onHqBlur: function(){ if (self._bt) clearTimeout(self._bt); self.setState({ sugLeaving: true }); self._bt = setTimeout(function(){ self.setState({ hfocus: false, hi: -1, sugLeaving: false }); }, 220); },
+      isHome: screen === 'home', isBusca: screen === 'busca', isImovel: screen === 'imovel',
+      hdrCls: screen === 'imovel' ? 'hdr hdr--light' : ((screen === 'home' && !st.scrolled && !st.menu) ? 'hdr hdr--clear' : 'hdr'),
+      menu: !!st.menu,
+      openMenu: function(e){
+        if (self._mt) clearTimeout(self._mt);
+        var x = 0, y = 40;
+        try { x = window.innerWidth - 44; var r = e.currentTarget.getBoundingClientRect(); x = r.left + r.width / 2; y = r.top + r.height / 2; } catch (err) {}
+        self.setState({ menu: true, menuClosing: false, mx: Math.round(x), my: Math.round(y) });
+      },
+      closeMenu: function(){ if (self._mt) clearTimeout(self._mt); self.setState({ menuClosing: true }); self._mt = setTimeout(function(){ self.setState({ menu: false, menuClosing: false }); }, 480); },
+      menuCls: st.menuClosing ? 'menu is-closing' : 'menu',
+      mx: st.mx || 0, my: st.my || 40,
+      goApt: go({ screen: 'busca', tab: 'comprar', tipo: 'Apartamento', bairro: 'todos', suites: 0, q: '' }),
+      goCasa: go({ screen: 'busca', tab: 'comprar', tipo: 'Casa', bairro: 'todos', suites: 0, q: '' }),
+      goAval: go({ screen: 'home' }, 'avaliacoes'),
+      goHome: go({ screen: 'home' }),
+      goBusca: go({ screen: 'busca' }),
+      goComprar: go({ screen: 'busca', tab: 'comprar' }),
+      goAlugar: go({ screen: 'busca', tab: 'alugar' }),
+      goLanc: go({ screen: 'busca', tab: 'lancamentos' }),
+      goBairros: go({ screen: 'home' }, 'bairros'),
+      goContato: go({ screen: screen }, 'contato'),
+      openPrive: go({ screen: 'imovel', id: 'CA195' }),
+      waGeral: waLink('Olá! Vim pelo site da Vivere e gostaria de atendimento.'),
+      waAnunciar: waLink('Olá! Tenho um imóvel e gostaria de anunciar com a Vivere.'),
+      waAlugar: waLink('Olá! Procuro um imóvel para locação anual.'),
+      heroTabs: heroTabs, hq: st.hq,
+      heroInd: 'hero-ind pos-' + Math.max(0, ['comprar','alugar','lancamentos'].indexOf(st.htab)),
+      onHq: function(e){ if (self._bt) clearTimeout(self._bt); self.setState({ hq: e.target.value, hi: -1, hfocus: true, sugLeaving: false }); },
+      onHqKey: function(e){
+        var n = flat.length, hi = typeof st.hi === 'number' ? st.hi : -1;
+        if (e.key === 'ArrowDown' && n) { e.preventDefault(); self.setState({ hi: (hi + 1) % n, hfocus: true }); }
+        else if (e.key === 'ArrowUp' && n) { e.preventDefault(); self.setState({ hi: hi <= 0 ? n - 1 : hi - 1 }); }
+        else if (e.key === 'Escape') { self.setState({ hfocus: false, hi: -1 }); }
+        else if (e.key === 'Enter') { e.preventDefault(); if (n) { launch(flat[hi >= 0 ? hi : 0].act); } else { doHeroSearch(); } }
+      },
+      doHeroSearch: doHeroSearch,
+      cards: IMOVEIS.map(function(x){ return self.card(x); }),
+      bairros: bairros, videos: videos,
+      reviews: REVIEWS.map(function(t){ return { texto: t }; }),
+      srTabs: srTabs, srTitle: srTitle, q: st.q,
+      srInd: 'tab-ind pos-' + Math.max(0, ['comprar','alugar','lancamentos'].indexOf(st.tab)),
+      onQ: function(e){ self.setState({ q: e.target.value }); },
+      isComprar: st.tab === 'comprar', isAlugar: st.tab === 'alugar', isLanc: st.tab === 'lancamentos',
+      filtersOpen: !!st.filtersOpen, filtersCls: st.filtersOpen ? 'filters is-open' : 'filters',
+      toggleFilters: function(){ self.setState({ filtersOpen: !st.filtersOpen }); },
+      fgroups: fgroups, hasFilters: hasFilters,
+      clearFilters: function(){ self.setState({ tipo: 'todos', bairro: 'todos', suites: 0, q: '' }); },
+      results: results.map(function(x){ return self.card(x); }),
+      hasResults: results.length > 0, noResults: results.length === 0,
+      countLabel: results.length === 1 ? '1 imóvel' : (results.length + ' imóveis'),
+      im: im,
+      similares: IMOVEIS.filter(function(x){ return x.codigo !== p.codigo; }).map(function(x){ return self.card(x); }),
+      lbOpen: lbOpen, lbSrc: p.l[lbi], lbCount: (lbi + 1) + ' / ' + total,
+      lbClose: function(){ self.setState({ lb: null }); },
+      lbPrev: function(){ self.setState({ lb: lbi - 1 }); },
+      lbNext: function(){ self.setState({ lb: lbi + 1 }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
