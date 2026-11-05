@@ -19,6 +19,14 @@ Site público da Vivere (viverenapraia.com.br), em Next.js. As decisões de desi
 - **Prévia do WhatsApp:** `public/og/<código>.jpg` (1200×630). Ao adicionar imóvel novo, rode `npm run og`.
 - **Links antigos:** `/imovel/<id>/<slug>` do ImobiBrasil redirecionam (301) para a página nova (`next.config.ts`).
 
+## Ver o site sem instalar nada (GitHub Codespaces)
+
+1. Abra o repositório no GitHub e escolha o ramo que quer ver.
+2. Clique no botão verde **Code** → aba **Codespaces** → **Create codespace on …**.
+3. Espere 1 a 2 minutos. O site abre sozinho numa aba nova do navegador
+   (se o navegador bloquear, clique em **Open in Browser** no aviso que aparece no canto).
+4. Quando terminar, feche a aba. O Codespace desliga sozinho depois de 30 minutos parado.
+
 ## Rodar no computador
 
 ```bash
