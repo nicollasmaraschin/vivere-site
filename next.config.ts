@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [480, 720, 960, 1280, 1600],
     imageSizes: [96, 160, 240, 360],
+    qualities: [75, 85],
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
   async redirects() {

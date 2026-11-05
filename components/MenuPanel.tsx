@@ -57,7 +57,7 @@ export function MenuPanel({ x, y, onClosed, onNavigate }: { x: number; y: number
       <div className="menu-panel" style={{ "--mx": `${x}px`, "--my": `${y}px` } as CSSProperties}>
         <div className="menu-art" aria-hidden="true">
           <div className="menu-art-photo">
-            <Image src="/photos/ap183/01-1600.webp" alt="" fill sizes="50vw" />
+            <Image src="/photos/ap183/01-1600.webp" alt="" fill quality={85} sizes="(min-width: 1000px) 75vw, 1px" />
           </div>
           <BrandMask src="/brand/vivere-symbol-v.svg" className="vmark" />
         </div>

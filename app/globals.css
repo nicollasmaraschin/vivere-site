@@ -433,7 +433,7 @@ body:has(.cta-bar) .ftr{padding-bottom:140px}
   .menu-art{display:block;position:relative;overflow:hidden}
   .menu-art-photo{position:absolute;left:-16%;top:10%;width:116%;aspect-ratio:1/1;border-radius:50%;overflow:hidden;animation:mArtIn 1.3s var(--ease) .15s both}
   .menu-art-photo img{object-fit:cover}
-  .menu-art .vmark{position:absolute;left:44%;top:56%;width:78%;color:var(--porc);transform:translate(-50%,-50%);animation:mVIn 1s var(--ease) .4s both}
+  .menu-art .vmark{position:absolute;left:44%;top:56%;width:78%;aspect-ratio:462.66/326.61;color:var(--porc);transform:translate(-50%,-50%);animation:mVIn 1s var(--ease) .4s both}
   .menu-side{padding:26px 40px 36px;overflow:auto;max-height:100%}
   .menu-wm{position:absolute;left:44px;top:42px;z-index:2}
   .menu-top{justify-content:flex-end}
